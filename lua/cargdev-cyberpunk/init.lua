@@ -26,9 +26,9 @@ function M.apply_highlights()
     syntax = {
       keyword = "#FF79C6",
       ["function"] = "#50FA7B",
-      string = "#8BE9FD",
+      string = "#FFFFFF",
       number = "#FFB86C",
-      comment = "#8BE9FD",
+      comment = "#666666",
       type = "#BD93F9",
       constant = "#FFB86C",
       operator = "#FF79C6",
@@ -204,6 +204,11 @@ function M.apply_highlights()
     ["@lsp.type.method"] = { fg = colors.syntax["function"], bold = true },
     ["@lsp.type.macro"] = { fg = colors.syntax.keyword, bold = true },
     ["@lsp.type.decorator"] = { fg = colors.syntax.property, bold = true },
+    
+    CopilotSuggestion = { fg = "#999999", italic = true },
+    CopilotAnnotation = { fg = "#999999", italic = true },
+    CopilotSuggestionPrefix = { fg = "#999999", italic = true },
+    CopilotSuggestionSuffix = { fg = "#999999", italic = true },
   }
   
   for group, settings in pairs(groups) do
