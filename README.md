@@ -12,6 +12,20 @@ A vibrant, high-contrast Neovim color scheme crafted for developers who thrive i
 - **LSP Integration**: Full support for Language Server Protocol highlighting
 - **Treesitter Support**: Advanced syntax highlighting with Treesitter
 
+## Screenshots
+
+### TypeScript
+![TypeScript Example](assets/TS_file.png)
+
+### TypeScript React (TSX)
+![TypeScript React Example](assets/TSX_file.png)
+
+### CSS
+![CSS Example](assets/CSS_file.png)
+
+### JSON
+![JSON Example](assets/JSON_file.png)
+
 ## Color Palette
 
 ### Syntax Colors
