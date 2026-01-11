@@ -66,7 +66,15 @@ Thank you for your interest in contributing to CargDev-Cyberpunk.nvim! This docu
 lua/cargdev-cyberpunk/
 ├── init.lua          # Main plugin entry point
 ├── colors.lua        # Color palette definitions
-└── plugin.lua        # Plugin configuration
+├── config.lua        # Configuration management
+├── highlights.lua    # Highlight group definitions
+└── plugin.lua        # Plugin metadata
+
+colors/
+└── cargdev-cyberpunk.lua  # Colorscheme command file
+
+test/
+└── test_colors.lua   # Test suite
 ```
 
 ### Color Guidelines

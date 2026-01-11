@@ -1,0 +1,48 @@
+# Selene configuration for CargDev-Cyberpunk.nvim
+# https://kampfkarren.github.io/selene/
+
+std = "lua51+vim"
+
+[lints]
+# Allow globals from Neovim
+global_usage = "allow"
+# Unused variables warnings
+unused_variable = "warn"
+# Empty if statements
+empty_if = "warn"
+# Deprecated features
+deprecated = "warn"
+# Dividing by zero
+divide_by_zero = "warn"
+# Duplicate keys in tables
+duplicate_keys = "deny"
+# If statements with the same body
+if_same_then_else = "warn"
+# Incorrect standard library usage
+incorrect_standard_library_use = "deny"
+# Manual table clone
+manual_table_clone = "warn"
+# Mismatched argument count
+mismatched_arg_count = "warn"
+# Multiple statements on one line
+multiple_statements = "allow"
+# Parentheses condition
+parenthese_conditions = "warn"
+# Shadowing
+shadowing = "allow"
+# Type checking
+type_check_inside_call = "warn"
+# Unbalanced assignments
+unbalanced_assignments = "warn"
+# Undefined variables
+undefined_variable = "deny"
+# Unreachable code
+unreachable_code = "warn"
+# Unscoped variables
+unscoped_variables = "warn"
+# Unused functions
+unused_function = "warn"
+
+[config]
+# Files to exclude from linting
+exclude = [".git"]

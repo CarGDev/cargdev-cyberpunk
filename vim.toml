@@ -1,0 +1,56 @@
+# Vim standard library for Selene
+# Defines Neovim global variables and functions
+
+[vim]
+any = true
+
+[vim.api]
+any = true
+
+[vim.fn]
+any = true
+
+[vim.g]
+any = true
+
+[vim.o]
+any = true
+
+[vim.opt]
+any = true
+
+[vim.cmd]
+any = true
+
+[vim.loop]
+any = true
+
+[vim.lsp]
+any = true
+
+[vim.treesitter]
+any = true
+
+[vim.diagnostic]
+any = true
+
+[vim.keymap]
+any = true
+
+[vim.tbl_extend]
+any = true
+
+[vim.tbl_deep_extend]
+any = true
+
+[vim.deepcopy]
+any = true
+
+[vim.inspect]
+any = true
+
+[vim.notify]
+any = true
+
+[vim.schedule]
+any = true

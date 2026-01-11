@@ -4,12 +4,13 @@ A vibrant, high-contrast Neovim color scheme crafted for developers who thrive i
 
 ## Features
 
-- **High-Contrast Neon Colors**: Hot pink keywords, electric purple types, vibrant cyan strings, and lush green functions
+- **High-Contrast Neon Colors**: Hot pink keywords, electric purple types, vibrant cyan accents, and lush green functions
 - **Cyberpunk Aesthetic**: Deep blue backgrounds with neon accents for maximum visual impact
 - **TypeScript Support**: Comprehensive LSP and Treesitter highlighting for TypeScript/JavaScript
-- **Atomic Design**: Modular structure following atomic design principles
-- **Bold Styling**: High-saturation colors with bold styling for maximum readability
-- **LSP Integration**: Full support for Language Server Protocol highlighting
+- **Configurable**: Transparent background, italic/bold toggles, and custom color overrides
+- **Plugin Integration**: Native support for Telescope, NvimTree, Neo-tree, GitSigns, nvim-cmp, Lazy.nvim, and more
+- **Terminal Colors**: Full 16-color terminal palette for `:terminal`
+- **LSP Integration**: Full support for Language Server Protocol highlighting and semantic tokens
 - **Treesitter Support**: Advanced syntax highlighting with Treesitter
 
 ## Screenshots
@@ -29,121 +30,190 @@ A vibrant, high-contrast Neovim color scheme crafted for developers who thrive i
 ## Color Palette
 
 ### Syntax Colors
-- **Keywords**: `#FF79C6` - Control flow and declarations (bold)
-- **Functions**: `#50FA7B` - Function calls and definitions (bold)
-- **Strings**: `#8BE9FD` - String literals and comments
-- **Numbers**: `#FFB86C` - Numeric literals and constants
-- **Types**: `#BD93F9` - Type annotations and interfaces (bold)
-- **Variables**: `#BD93F9` - Variable names
-- **Properties**: `#50FA7B` - Object properties (bold)
+| Element | Color | Preview |
+|---------|-------|---------|
+| Keywords | `#FF79C6` | Control flow and declarations (bold) |
+| Functions | `#50FA7B` | Function calls and definitions (bold) |
+| Strings | `#FFFFFF` | String literals |
+| Numbers | `#FFB86C` | Numeric literals and constants |
+| Types | `#BD93F9` | Type annotations and interfaces (bold) |
+| Variables | `#BD93F9` | Variable names |
+| Properties | `#50FA7B` | Object properties (bold) |
+| Comments | `#666666` | Code comments (italic) |
 
 ### Background Colors
-- **Primary**: `#002B36` - Deep blue background
-- **Secondary**: `#003B46` - Secondary background
-- **Tertiary**: `#004B56` - Tertiary background
-- **Cursor Line**: `#112233` - Slightly lighter than background
-- **Selection**: `#44475A` - Selection highlight
+| Element | Color | Description |
+|---------|-------|-------------|
+| Primary | `#002B36` | Main background |
+| Secondary | `#003B46` | Sidebars and floating windows |
+| Tertiary | `#004B56` | Selected tabs and highlights |
+| Cursor Line | `#112233` | Current line highlight |
+| Selection | `#44475A` | Visual selection |
 
-### Special Colors
-- **Error**: `#FF5555` - Error messages (bold)
-- **Warning**: `#FFB86C` - Warning messages
-- **Info**: `#8BE9FD` - Information messages
-- **Success**: `#50FA7B` - Success indicators
+### Diagnostic Colors
+| Type | Color |
+|------|-------|
+| Error | `#FF5555` |
+| Warning | `#FFB86C` |
+| Info | `#8BE9FD` |
+| Hint | `#50FA7B` |
 
 ## Installation
 
+### Using Lazy.nvim (Recommended)
+
+```lua
+{
+  "yourusername/cargdev-cyberpunk.nvim",
+  lazy = false,
+  priority = 1000,
+  config = function()
+    require("cargdev-cyberpunk").setup()
+  end,
+}
+```
+
 ### Using Packer
+
 ```lua
 use {
-  'cargdev-cyberpunk.nvim',
+  "yourusername/cargdev-cyberpunk.nvim",
   config = function()
-    require('cargdev-cyberpunk').setup()
+    require("cargdev-cyberpunk").setup()
   end
 }
 ```
 
-### Using Lazy.nvim
+### Using vim-plug
+
+```vim
+Plug 'yourusername/cargdev-cyberpunk.nvim'
+```
+
+Then in your Lua config:
+
 ```lua
-{
-  'cargdev-cyberpunk.nvim',
-  config = true,
-}
+require("cargdev-cyberpunk").setup()
 ```
 
 ### Manual Installation
-1. Clone this repository to your Neovim plugins directory:
-```bash
-git clone https://github.com/yourusername/cargdev-cyberpunk.nvim ~/.local/share/nvim/site/pack/plugins/start/cargdev-cyberpunk.nvim
-```
 
-2. Add to your `init.lua`:
-```lua
-require('cargdev-cyberpunk').setup()
+Clone this repository to your Neovim plugins directory:
+
+```bash
+git clone https://github.com/yourusername/cargdev-cyberpunk.nvim \
+  ~/.local/share/nvim/site/pack/plugins/start/cargdev-cyberpunk.nvim
 ```
 
 ## Configuration
 
 ### Basic Setup
+
 ```lua
-require('cargdev-cyberpunk').setup()
+require("cargdev-cyberpunk").setup()
+```
+
+### Using Colorscheme Command
+
+After installation, you can load the colorscheme with:
+
+```vim
+:colorscheme cargdev-cyberpunk
 ```
 
 ### Advanced Configuration
-```lua
-require('cargdev-cyberpunk').setup({
-  -- Future configuration options will be added here
-})
-```
-
-### Customizing Colors
-You can easily override colors by requiring the colors module:
 
 ```lua
-local colors = require('cargdev-cyberpunk.colors')
+require("cargdev-cyberpunk").setup({
+  -- Enable transparent background
+  transparent = false,
 
--- Override specific colors
-colors.override({
-  syntax = {
-    keyword = "#FF0000",  -- Make keywords red
-    function = "#00FF00", -- Make functions green
+  -- Style options
+  italic_comments = true,
+  bold_keywords = true,
+  bold_functions = true,
+  bold_types = true,
+
+  -- Enable terminal colors
+  terminal_colors = true,
+
+  -- Custom color overrides
+  colors = {
+    syntax = {
+      keyword = "#FF0000",  -- Make keywords red
+    },
+    bg = {
+      primary = "#000000",  -- Pure black background
+    },
   },
-  bg = {
-    primary = "#000000",  -- Make background pure black
-  }
 })
 ```
 
-## Usage
+### Configuration Options
 
-After installation, the color scheme will be automatically applied. You can also manually apply it:
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `transparent` | boolean | `false` | Enable transparent background |
+| `italic_comments` | boolean | `true` | Use italic style for comments |
+| `bold_keywords` | boolean | `true` | Use bold style for keywords |
+| `bold_functions` | boolean | `true` | Use bold style for functions |
+| `bold_types` | boolean | `true` | Use bold style for types |
+| `terminal_colors` | boolean | `true` | Set terminal colors for `:terminal` |
+| `colors` | table | `{}` | Custom color overrides |
 
-```lua
--- Apply the color scheme
-require('cargdev-cyberpunk').apply_highlights()
-```
+## Plugin Support
+
+CargDev-Cyberpunk includes native highlight groups for these plugins:
+
+- **Telescope**: Search and picker UI
+- **NvimTree / Neo-tree**: File explorers
+- **GitSigns**: Git diff indicators
+- **nvim-cmp**: Completion menu
+- **indent-blankline**: Indentation guides
+- **which-key**: Keybinding hints
+- **Lazy.nvim**: Plugin manager UI
+- **Mason**: LSP/DAP installer UI
+- **bufferline.nvim**: Buffer tabs
+- **lualine.nvim**: Status line
+- **nvim-notify**: Notification popups
+- **noice.nvim**: UI replacement
+- **trouble.nvim**: Diagnostics list
+- **dashboard-nvim / alpha-nvim**: Start screen
+- **Copilot**: AI suggestions
 
 ## Architecture
 
-The plugin follows atomic design principles with a modular structure:
+The plugin follows a modular structure:
 
 ```
 lua/cargdev-cyberpunk/
-├── init.lua          # Main plugin entry point
+├── init.lua          # Main entry point and setup
 ├── colors.lua        # Color palette definitions
-└── plugin.lua        # Plugin configuration
+├── config.lua        # Configuration management
+├── highlights.lua    # Highlight group definitions
+└── plugin.lua        # Plugin metadata
+
+colors/
+└── cargdev-cyberpunk.lua  # Colorscheme command file
+
+test/
+└── test_colors.lua   # Test suite
 ```
 
 ### Modules
 
-- **`init.lua`**: Main setup and configuration functions
-- **`colors.lua`**: Centralized color palette with vibrant cyberpunk colors
-- **`highlights.lua`**: Comprehensive highlight group definitions for all syntax elements
+- **`init.lua`**: Main setup, load, and apply functions
+- **`colors.lua`**: Centralized color palette with override support
+- **`config.lua`**: Configuration defaults and user options
+- **`highlights.lua`**: All highlight group definitions organized by category
+- **`plugin.lua`**: Plugin metadata (name, version, author)
 
 ## TypeScript Support
 
 This color scheme includes extensive TypeScript support:
 
 - **LSP Integration**: Full support for TypeScript Language Server highlighting
+- **Semantic Tokens**: Enhanced highlighting with LSP semantic tokens
 - **Treesitter**: Advanced syntax highlighting with Treesitter
 - **Type Annotations**: Special highlighting for type annotations and interfaces
 - **Import/Export**: Distinct colors for import and export statements
@@ -153,18 +223,70 @@ This color scheme includes extensive TypeScript support:
 ## Requirements
 
 - Neovim 0.8.0 or higher
+- `termguicolors` enabled (automatically set by the plugin)
 - Treesitter (recommended for best experience)
 - LSP support (recommended for TypeScript features)
 
+## Testing
+
+Run the test suite:
+
+```bash
+nvim --headless -c "lua dofile('test/test_colors.lua')"
+```
+
+Or from within Neovim:
+
+```lua
+:lua dofile('test/test_colors.lua')
+```
+
+## API
+
+### Functions
+
+```lua
+local cyberpunk = require("cargdev-cyberpunk")
+
+-- Setup with options
+cyberpunk.setup(opts)
+
+-- Load/reload the colorscheme
+cyberpunk.load()
+
+-- Apply highlights (useful for refreshing)
+cyberpunk.apply_highlights()
+
+-- Get the current color palette
+local colors = cyberpunk.get_colors()
+```
+
+### Accessing Colors
+
+```lua
+local colors = require("cargdev-cyberpunk.colors")
+
+-- Get the palette
+local palette = colors.palette
+
+-- Override colors
+colors.override({
+  syntax = {
+    keyword = "#FF0000",
+  },
+})
+```
+
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ### Development Setup
+
 1. Fork the repository
-2. Create a feature branch
+2. Clone your fork locally
 3. Make your changes
-4. Test thoroughly
+4. Run tests: `nvim --headless -c "lua dofile('test/test_colors.lua')"`
 5. Submit a pull request
 
 ## License
@@ -174,6 +296,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Acknowledgments
 
 - **Neovim Community**: For the excellent plugin ecosystem
+- **Dracula Theme**: Inspiration for some color choices
 - **Cyberpunk Aesthetic**: Inspired by the vibrant neon colors of cyberpunk culture
 
 ## Support
@@ -188,4 +311,4 @@ If you encounter any issues or have questions:
 
 **Enjoy coding with vibrant colors!**
 
-*"If I squint at this theme, I should feel like Tron is about to compile!"* 
+*"If I squint at this theme, I should feel like Tron is about to compile!"*

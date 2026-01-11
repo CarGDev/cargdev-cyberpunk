@@ -1,8 +1,8 @@
-### Lua ###
-# Compiled Lua sources
+# Lua compiled sources
 luac.out
+*.luac
 
-# luarocks build files
+# LuaRocks build files
 *.src.rock
 *.zip
 *.tar.gz
@@ -40,5 +40,22 @@ luac.out
 *.x86_64
 *.hex
 
+# Neovim
+.nvim.lua
+.nvimrc
+.exrc
 
-# End of https://www.toptal.com/developers/gitignore/api/lua
+# Editor specific
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+.tests/
+coverage/
+
+# Documentation build
+doc/tags
