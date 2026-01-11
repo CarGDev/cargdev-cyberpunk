@@ -1,0 +1,160 @@
+# CargDev-Cyberpunk.nvim
+
+> A vibrant Neovim colorscheme with cyberpunk aesthetics
+
+## Project Overview
+
+This is a Neovim colorscheme plugin written in Lua. It provides syntax highlighting with a cyberpunk-inspired color palette featuring neon colors on a deep blue background.
+
+## Tech Stack
+
+- Language: Lua 5.1 (Neovim Lua)
+- Target: Neovim 0.8.0+
+- Linting: Selene
+- Formatting: StyLua
+
+## Project Structure
+
+```
+cargdev-cyberpunk.nvim/
+├── colors/
+│   └── cargdev-cyberpunk.lua    # Enables :colorscheme command
+├── lua/cargdev-cyberpunk/
+│   ├── init.lua                 # Main entry point (setup, load, apply)
+│   ├── colors.lua               # Color palette definitions
+│   ├── config.lua               # Configuration options
+│   ├── highlights.lua           # All highlight group definitions
+│   └── plugin.lua               # Plugin metadata
+├── test/
+│   └── test_colors.lua          # Test suite
+├── examples/
+│   └── sample.ts                # TypeScript sample for testing
+├── assets/                      # Screenshot images
+├── CHANGELOG.md
+├── CONTRIBUTING.md
+├── INSTALL.md
+├── README.md
+├── LICENSE                      # MIT
+├── selene.toml                  # Lua linter config
+├── stylua.toml                  # Lua formatter config
+└── vim.toml                     # Neovim globals for selene
+```
+
+## Key Files
+
+### lua/cargdev-cyberpunk/init.lua
+Main module exposing:
+- `setup(opts)` - Initialize with configuration options
+- `load()` - Load/reload the colorscheme
+- `apply_highlights()` - Apply all highlight groups
+- `apply_terminal_colors()` - Set terminal colors
+- `get_colors()` - Return the color palette
+
+### lua/cargdev-cyberpunk/colors.lua
+Color palette with categories:
+- `bg` - Background colors (primary, secondary, tertiary, float, highlight, selection)
+- `fg` - Foreground colors (primary, secondary, muted, accent)
+- `syntax` - Syntax colors (keyword, function, string, number, comment, type, etc.)
+- `special` - Diagnostic colors (error, warning, info, hint, success, diff_*)
+- `terminal` - 16-color terminal palette
+
+Functions:
+- `override(custom_colors)` - Override palette colors
+- `get_palette()` - Get a copy of the palette
+
+### lua/cargdev-cyberpunk/config.lua
+Configuration options:
+- `transparent` (boolean, default: false) - Transparent background
+- `italic_comments` (boolean, default: true) - Italic comments
+- `bold_keywords` (boolean, default: true) - Bold keywords
+- `bold_functions` (boolean, default: true) - Bold functions
+- `bold_types` (boolean, default: true) - Bold types
+- `terminal_colors` (boolean, default: true) - Set terminal colors
+- `colors` (table, default: {}) - Custom color overrides
+
+### lua/cargdev-cyberpunk/highlights.lua
+Contains `get_groups(colors, config)` function returning a table of 500+ highlight groups:
+- Editor UI (Normal, Cursor, Visual, Search, StatusLine, etc.)
+- Syntax (Comment, String, Function, Keyword, Type, etc.)
+- Treesitter (@comment, @function, @keyword, @type, etc.)
+- LSP semantic tokens (@lsp.type.*, @lsp.mod.*)
+- Diagnostics (DiagnosticError, DiagnosticWarn, etc.)
+- Plugin support (Telescope, NvimTree, GitSigns, nvim-cmp, etc.)
+
+## Color Palette
+
+Primary colors:
+- Background: #002B36 (deep blue)
+- Foreground: #E0E0E0 (light gray)
+- Accent: #8BE9FD (cyan)
+
+Syntax colors:
+- Keywords: #FF79C6 (hot pink)
+- Functions: #50FA7B (neon green)
+- Strings: #FFFFFF (white)
+- Numbers: #FFB86C (orange)
+- Types: #BD93F9 (purple)
+- Comments: #666666 (gray)
+
+## Usage
+
+```lua
+-- Basic
+require("cargdev-cyberpunk").setup()
+
+-- With options
+require("cargdev-cyberpunk").setup({
+  transparent = true,
+  italic_comments = true,
+  colors = {
+    bg = { primary = "#000000" },
+  },
+})
+
+-- Or via command
+vim.cmd("colorscheme cargdev-cyberpunk")
+```
+
+## Development Commands
+
+```bash
+# Run tests
+nvim --headless -c "lua dofile('test/test_colors.lua')"
+
+# Format code
+stylua lua/
+
+# Lint code
+selene lua/
+```
+
+## Neovim API Used
+
+- `vim.api.nvim_set_hl(0, group, settings)` - Set highlight groups
+- `vim.g.colors_name` - Set colorscheme name
+- `vim.g.terminal_color_*` - Set terminal colors
+- `vim.o.termguicolors` - Enable true color
+- `vim.cmd("hi clear")` - Clear existing highlights
+- `vim.tbl_deep_extend()` - Merge tables
+- `vim.deepcopy()` - Copy tables
+
+## Adding New Highlight Groups
+
+1. Edit `lua/cargdev-cyberpunk/highlights.lua`
+2. Add groups to the table returned by `get_groups()`
+3. Use colors from `colors` parameter (e.g., `c.syntax.keyword`)
+4. Use config from `config` parameter for style toggles
+5. Run tests to verify
+
+## Adding New Configuration Options
+
+1. Add default value in `lua/cargdev-cyberpunk/config.lua` defaults table
+2. Use the option in `lua/cargdev-cyberpunk/highlights.lua`
+3. Document in README.md
+4. Update CHANGELOG.md
+
+## Plugin Highlights Supported
+
+Telescope, NvimTree, Neo-tree, GitSigns, nvim-cmp, indent-blankline,
+which-key, Lazy.nvim, Mason, bufferline, lualine, nvim-notify,
+noice.nvim, trouble.nvim, dashboard-nvim, alpha-nvim, Copilot
