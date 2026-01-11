@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _No unreleased changes._
 
+## [1.1.1] - 2026-01-10
+
+### Added
+
+- `llms.txt` file for AI assistant context - provides LLMs with project structure, API documentation, color palette, and development guidelines
+
 ## [1.1.0] - 2026-01-10
 
 ### Added
@@ -150,6 +156,7 @@ _No unreleased changes._
 - **Warnings**: `#FFB86C` (orange)
 - **Info**: `#8BE9FD` (cyan)
 
-[Unreleased]: https://github.com/yourusername/cargdev-cyberpunk.nvim/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/yourusername/cargdev-cyberpunk.nvim/compare/v1.1.1...HEAD
+[1.1.1]: https://github.com/yourusername/cargdev-cyberpunk.nvim/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/yourusername/cargdev-cyberpunk.nvim/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/yourusername/cargdev-cyberpunk.nvim/releases/tag/v1.0.0
