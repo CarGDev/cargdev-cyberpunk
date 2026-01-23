@@ -12,6 +12,7 @@ A vibrant, high-contrast Neovim color scheme crafted for developers who thrive i
 - **Terminal Colors**: Full 16-color terminal palette for `:terminal`
 - **LSP Integration**: Full support for Language Server Protocol highlighting and semantic tokens
 - **Treesitter Support**: Advanced syntax highlighting with Treesitter
+- **Multi-Platform**: Also available for terminals (iTerm2, Alacritty, Kitty, WezTerm, Windows Terminal) and VS Code
 
 ## Screenshots
 
@@ -58,6 +59,18 @@ A vibrant, high-contrast Neovim color scheme crafted for developers who thrive i
 | Info | `#8BE9FD` |
 | Hint | `#50FA7B` |
 
+### Terminal Colors (ANSI)
+| Color | Normal | Bright |
+|-------|--------|--------|
+| Black | `#002B36` | `#44475A` |
+| Red | `#FF5555` | `#FF6E67` |
+| Green | `#50FA7B` | `#5AF78E` |
+| Yellow | `#FFB86C` | `#F4F99D` |
+| Blue | `#BD93F9` | `#CAA9FA` |
+| Magenta | `#FF79C6` | `#FF92DF` |
+| Cyan | `#8BE9FD` | `#9AEDFE` |
+| White | `#E0E0E0` | `#F8F8F2` |
+
 ## Installation
 
 ### Using Lazy.nvim (Recommended)
@@ -103,6 +116,99 @@ Clone this repository to your Neovim plugins directory:
 ```bash
 git clone https://github.com/yourusername/cargdev-cyberpunk.nvim \
   ~/.local/share/nvim/site/pack/plugins/start/cargdev-cyberpunk.nvim
+```
+
+## Terminal Installation
+
+The `terminals/` directory contains theme files for popular terminal emulators.
+
+### iTerm2
+
+1. Open iTerm2 Preferences → Profiles → Colors
+2. Click "Color Presets..." → "Import..."
+3. Select `terminals/cargdev-cyberpunk.itermcolors`
+4. Select "CargDev Cyberpunk" from the presets dropdown
+
+### Alacritty
+
+```bash
+# Copy the theme file
+mkdir -p ~/.config/alacritty/themes
+cp terminals/cargdev-cyberpunk.toml ~/.config/alacritty/themes/
+
+# Add to your alacritty.toml
+[general]
+import = ["~/.config/alacritty/themes/cargdev-cyberpunk.toml"]
+```
+
+### Kitty
+
+```bash
+# Copy the theme file
+mkdir -p ~/.config/kitty/themes
+cp terminals/cargdev-cyberpunk.conf ~/.config/kitty/themes/
+
+# Add to your kitty.conf
+include themes/cargdev-cyberpunk.conf
+```
+
+### WezTerm
+
+```lua
+-- In your wezterm.lua
+local cargdev_cyberpunk = require("cargdev-cyberpunk-wezterm")
+config.colors = cargdev_cyberpunk
+```
+
+Or copy `terminals/cargdev-cyberpunk-wezterm.lua` to your WezTerm config directory.
+
+### Windows Terminal
+
+1. Open Windows Terminal Settings (JSON)
+2. Add the contents of `terminals/cargdev-cyberpunk-windows-terminal.json` to the `schemes` array
+3. Set `"colorScheme": "CargDev Cyberpunk"` in your profile
+
+### Shell Colors (Bash/Zsh)
+
+Source the shell script in your `.bashrc` or `.zshrc`:
+
+```bash
+source /path/to/cargdev-cyberpunk.nvim/terminals/cargdev-cyberpunk-shell.sh
+```
+
+This configures LS_COLORS, man page colors, FZF colors, and more.
+
+### Oh My Zsh Theme
+
+```bash
+# Copy to Oh My Zsh themes
+cp terminals/cargdev-cyberpunk.zsh-theme ~/.oh-my-zsh/custom/themes/
+
+# Set in your .zshrc
+ZSH_THEME="cargdev-cyberpunk"
+```
+
+## VS Code Installation
+
+### From Extension Folder
+
+1. Copy the `vscode/` folder contents to your VS Code extensions:
+   - **macOS**: `~/.vscode/extensions/cargdev-cyberpunk`
+   - **Windows**: `%USERPROFILE%\.vscode\extensions\cargdev-cyberpunk`
+   - **Linux**: `~/.vscode/extensions/cargdev-cyberpunk`
+2. Restart VS Code
+3. Open Command Palette (Ctrl+Shift+P / Cmd+Shift+P)
+4. Select "Preferences: Color Theme" → "CargDev Cyberpunk"
+
+### Publishing to Marketplace
+
+To publish the VS Code extension:
+
+```bash
+cd vscode
+npm install -g @vscode/vsce
+vsce package
+vsce publish
 ```
 
 ## Configuration
@@ -195,6 +301,20 @@ lua/cargdev-cyberpunk/
 
 colors/
 └── cargdev-cyberpunk.lua  # Colorscheme command file
+
+terminals/
+├── cargdev-cyberpunk.itermcolors      # iTerm2 theme
+├── cargdev-cyberpunk.toml             # Alacritty theme
+├── cargdev-cyberpunk.conf             # Kitty theme
+├── cargdev-cyberpunk-wezterm.lua      # WezTerm theme
+├── cargdev-cyberpunk-windows-terminal.json  # Windows Terminal theme
+├── cargdev-cyberpunk-shell.sh         # Shell color configuration
+└── cargdev-cyberpunk.zsh-theme        # Oh My Zsh theme
+
+vscode/
+├── package.json                       # VS Code extension manifest
+└── themes/
+    └── cargdev-cyberpunk-color-theme.json  # VS Code color theme
 
 test/
 └── test_colors.lua   # Test suite

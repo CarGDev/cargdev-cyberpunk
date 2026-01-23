@@ -1,0 +1,39 @@
+# CargDev Cyberpunk - Alacritty Theme
+#
+# Installation:
+# 1. Copy this file to ~/.config/alacritty/themes/
+# 2. Import in your alacritty.toml:
+#    [general]
+#    import = ["~/.config/alacritty/themes/cargdev-cyberpunk.toml"]
+
+[colors.primary]
+background = "#002B36"
+foreground = "#E0E0E0"
+
+[colors.cursor]
+cursor = "#8BE9FD"
+text = "#002B36"
+
+[colors.selection]
+background = "#44475A"
+text = "#F8F8F2"
+
+[colors.normal]
+black   = "#002B36"
+red     = "#FF5555"
+green   = "#50FA7B"
+yellow  = "#FFB86C"
+blue    = "#BD93F9"
+magenta = "#FF79C6"
+cyan    = "#8BE9FD"
+white   = "#E0E0E0"
+
+[colors.bright]
+black   = "#44475A"
+red     = "#FF6E67"
+green   = "#5AF78E"
+yellow  = "#F4F99D"
+blue    = "#CAA9FA"
+magenta = "#FF92DF"
+cyan    = "#9AEDFE"
+white   = "#F8F8F2"

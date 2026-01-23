@@ -1,0 +1,23 @@
+{
+    "name": "CargDev Cyberpunk",
+    "background": "#002B36",
+    "foreground": "#E0E0E0",
+    "cursorColor": "#8BE9FD",
+    "selectionBackground": "#44475A",
+    "black": "#002B36",
+    "red": "#FF5555",
+    "green": "#50FA7B",
+    "yellow": "#FFB86C",
+    "blue": "#BD93F9",
+    "purple": "#FF79C6",
+    "cyan": "#8BE9FD",
+    "white": "#E0E0E0",
+    "brightBlack": "#44475A",
+    "brightRed": "#FF6E67",
+    "brightGreen": "#5AF78E",
+    "brightYellow": "#F4F99D",
+    "brightBlue": "#CAA9FA",
+    "brightPurple": "#FF92DF",
+    "brightCyan": "#9AEDFE",
+    "brightWhite": "#F8F8F2"
+}

@@ -1,0 +1,39 @@
+{
+    "name": "cargdev-cyberpunk",
+    "displayName": "CargDev Cyberpunk",
+    "description": "A vibrant cyberpunk-inspired color theme with neon colors on deep blue backgrounds",
+    "version": "1.1.1",
+    "publisher": "cargdev",
+    "license": "MIT",
+    "icon": "icon.png",
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "keywords": [
+        "theme",
+        "color-theme",
+        "cyberpunk",
+        "dark",
+        "neon",
+        "dracula"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cargdev/cargdev-cyberpunk.nvim"
+    },
+    "bugs": {
+        "url": "https://github.com/cargdev/cargdev-cyberpunk.nvim/issues"
+    },
+    "contributes": {
+        "themes": [
+            {
+                "label": "CargDev Cyberpunk",
+                "uiTheme": "vs-dark",
+                "path": "./themes/cargdev-cyberpunk-color-theme.json"
+            }
+        ]
+    }
+}
