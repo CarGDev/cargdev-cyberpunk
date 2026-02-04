@@ -1,0 +1,46 @@
+# Project Tree: cargdevschemecolor.nvim
+# Generated: 2026-02-04 00:09:39
+# By: Codetyper.nvim
+
+📦 cargdevschemecolor.nvim
+├── 📁 assets
+│   ├── 📄 CSS_file.png
+│   ├── 📄 JSON_file.png
+│   ├── 📄 TSX_file.png
+│   └── 📄 TS_file.png
+├── 📁 colors
+│   └── 🌙 cargdev-cyberpunk.lua
+├── 📁 examples
+│   └── 📘 sample.ts
+├── 📁 lua
+│   └── 📁 cargdev-cyberpunk
+│       ├── 🌙 colors.lua
+│       ├── 🌙 config.lua
+│       ├── 🌙 highlights.lua
+│       ├── 🌙 init.lua
+│       └── 🌙 plugin.lua
+├── 📁 terminals
+│   ├── 📄 cargdev-cyberpunk-shell.sh
+│   ├── 🌙 cargdev-cyberpunk-wezterm.lua
+│   ├── 📋 cargdev-cyberpunk-windows-terminal.json
+│   ├── 📄 cargdev-cyberpunk.conf
+│   ├── 📄 cargdev-cyberpunk.itermcolors
+│   ├── 📄 cargdev-cyberpunk.toml
+│   └── 📄 cargdev-cyberpunk.zsh-theme
+├── 📁 test
+│   └── 🌙 test_colors.lua
+├── 📁 vscode
+│   ├── 📁 themes
+│   │   └── 📋 cargdev-cyberpunk-color-theme.json
+│   └── 📋 package.json
+├── 📝 CHANGELOG.md
+├── 📝 CONTRIBUTING.md
+├── 📝 INSTALL.md
+├── 📄 LICENSE
+├── 📝 README.md
+├── 📄 llms.txt
+├── 📄 selene.toml
+├── 📄 stylua.toml
+└── 📄 vim.toml
+
+# Total files tracked by Codetyper

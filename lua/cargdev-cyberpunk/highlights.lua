@@ -271,8 +271,9 @@ function M.get_groups(colors, config)
     ["@lsp.type.decorator"] = { fg = c.syntax.property, bold = true },
 
     ["@lsp.mod.deprecated"] = { strikethrough = true },
-    ["@lsp.mod.readonly"] = { fg = c.syntax.constant },
+    ["@lsp.mod.readonly"] = {},  -- Don't change color for const, keep variable color
     ["@lsp.mod.defaultLibrary"] = { fg = c.syntax.constant },
+    ["@lsp.mod.unused"] = { fg = c.fg.unused },  -- Gray for unused variables/imports
 
     -- ============================================================
     -- Diagnostics
@@ -306,6 +307,9 @@ function M.get_groups(colors, config)
     DiagnosticSignInfo = { fg = c.special.info },
     DiagnosticSignHint = { fg = c.special.hint },
     DiagnosticSignOk = { fg = c.special.success },
+
+    -- Unused code (for unused variables/imports)
+    DiagnosticUnnecessary = { fg = c.fg.unused },
 
     -- ============================================================
     -- LSP
@@ -401,6 +405,28 @@ function M.get_groups(colors, config)
     NeoTreeGitUntracked = { fg = c.fg.muted },
     NeoTreeIndentMarker = { fg = c.bg.tertiary },
     NeoTreeWinSeparator = { fg = c.bg.tertiary, bg = c.bg.secondary },
+
+    -- ============================================================
+    -- Plugin: NERDTree
+    -- ============================================================
+    NERDTreeDir = { fg = c.syntax["function"] },
+    NERDTreeDirSlash = { fg = c.syntax["function"] },
+    NERDTreeOpenable = { fg = c.fg.accent },
+    NERDTreeClosable = { fg = c.fg.accent },
+    NERDTreeFile = { fg = c.fg.primary },
+    NERDTreeExecFile = { fg = c.special.success, bold = true },
+    NERDTreeUp = { fg = c.fg.muted },
+    NERDTreeCWD = { fg = c.syntax.keyword, bold = true },
+    NERDTreeHelp = { fg = c.fg.muted },
+    NERDTreeToggleOn = { fg = c.special.success },
+    NERDTreeToggleOff = { fg = c.special.error },
+    NERDTreeFlags = { fg = c.fg.accent },
+    NERDTreeLinkFile = { fg = c.fg.accent },
+    NERDTreeLinkTarget = { fg = c.fg.muted },
+    NERDTreeLinkDir = { fg = c.fg.accent },
+    NERDTreeBookmarksHeader = { fg = c.syntax.keyword, bold = true },
+    NERDTreeBookmarkName = { fg = c.fg.accent },
+    NERDTreeRO = { fg = c.special.warning },
 
     -- ============================================================
     -- Plugin: nvim-cmp

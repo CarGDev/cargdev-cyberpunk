@@ -22,6 +22,7 @@ M.palette = {
     secondary = "#B8B8B8",
     muted = "#888888",
     accent = "#8BE9FD",
+    unused = "#555555",
   },
 
   syntax = {
@@ -33,7 +34,7 @@ M.palette = {
     type = "#BD93F9",
     constant = "#FFB86C",
     operator = "#FF79C6",
-    variable = "#BD93F9",
+    variable = "#F1FA8C",
     property = "#50FA7B",
   },
 

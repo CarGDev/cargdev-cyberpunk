@@ -18,6 +18,7 @@ function M.load()
 
   M.apply_highlights()
   M.apply_terminal_colors()
+  M.setup_file_explorer_bg()
 end
 
 ---Setup the colorscheme with options
@@ -75,6 +76,28 @@ function M.apply_terminal_colors()
   vim.g.terminal_color_13 = c.bright_magenta
   vim.g.terminal_color_14 = c.bright_cyan
   vim.g.terminal_color_15 = c.bright_white
+end
+
+---Setup background colors for file explorers (NERDTree, etc.)
+function M.setup_file_explorer_bg()
+  local colors = require("cargdev-cyberpunk.colors")
+  local c = colors.palette
+
+  -- Create highlight groups for NERDTree background
+  vim.api.nvim_set_hl(0, "NERDTreeNormal", { fg = c.fg.primary, bg = c.bg.secondary })
+  vim.api.nvim_set_hl(0, "NERDTreeEndOfBuffer", { fg = c.bg.secondary, bg = c.bg.secondary })
+  vim.api.nvim_set_hl(0, "NERDTreeWinSeparator", { fg = c.bg.tertiary, bg = c.bg.secondary })
+
+  -- Set up autocmd for NERDTree windows
+  local augroup = vim.api.nvim_create_augroup("CargdevCyberpunkNERDTree", { clear = true })
+
+  vim.api.nvim_create_autocmd("FileType", {
+    group = augroup,
+    pattern = "nerdtree",
+    callback = function()
+      vim.opt_local.winhighlight = "Normal:NERDTreeNormal,EndOfBuffer:NERDTreeEndOfBuffer,WinSeparator:NERDTreeWinSeparator"
+    end,
+  })
 end
 
 ---Get the color palette
