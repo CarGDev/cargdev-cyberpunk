@@ -59,3 +59,7 @@ coverage/
 
 # Documentation build
 doc/tags
+
+# Codetyper.nvim - AI coding partner files
+*.coder.*
+.coder/
