@@ -213,7 +213,7 @@
                 "punctuation.definition.comment"
             ],
             "settings": {
-                "foreground": "#666666",
+                "foreground": "#6272A4",
                 "fontStyle": "italic"
             }
         },
@@ -777,7 +777,7 @@
         },
         "modifier": "#FF79C6",
         "comment": {
-            "foreground": "#666666",
+            "foreground": "#6272A4",
             "fontStyle": "italic"
         },
         "string": "#5AF78E",

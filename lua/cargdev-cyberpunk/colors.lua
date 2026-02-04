@@ -18,11 +18,12 @@ M.palette = {
   },
 
   fg = {
-    primary = "#E0E0E0",
-    secondary = "#B8B8B8",
-    muted = "#888888",
+    primary = "#F8F8F2",
+    secondary = "#BFBFBF",
+    muted = "#6272A4",
     accent = "#8BE9FD",
-    unused = "#555555",
+    unused = "#4A5568",
+    bracket = "#A0A0C0",
   },
 
   syntax = {
@@ -30,7 +31,7 @@ M.palette = {
     ["function"] = "#50FA7B",
     string = "#5AF78E",
     number = "#FFB86C",
-    comment = "#666666",
+    comment = "#6272A4",
     type = "#BD93F9",
     constant = "#FFB86C",
     operator = "#FF79C6",

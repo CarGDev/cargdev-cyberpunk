@@ -159,6 +159,24 @@ function M.get_groups(colors, config)
     Todo = { fg = c.special.warning, bold = true },
 
     -- ============================================================
+    -- Language-specific (TypeScript/JavaScript)
+    -- ============================================================
+    typescriptBlock = { fg = c.fg.accent },
+    typescriptBraces = { fg = c.fg.accent },
+    typescriptParens = { fg = c.fg.bracket },
+    typescriptEndColons = { fg = c.fg.bracket },
+    typescriptIdentifierName = { fg = c.syntax.variable },
+    typescriptVariable = { fg = c.syntax.variable },
+    typescriptVariableDeclaration = { fg = c.syntax.variable },
+    typescriptTypeReference = { fg = c.syntax.type },
+    typescriptImport = { fg = c.syntax.keyword },
+    typescriptExport = { fg = c.syntax.keyword },
+    typescriptFuncKeyword = { fg = c.syntax.keyword },
+    typescriptArrowFunc = { fg = c.syntax.keyword },
+    typescriptCall = { fg = c.syntax["function"] },
+    typescriptMember = { fg = c.syntax.property },
+
+    -- ============================================================
     -- Treesitter highlights
     -- ============================================================
     ["@text"] = { fg = c.fg.primary },
@@ -245,10 +263,10 @@ function M.get_groups(colors, config)
     ["@tag.attribute"] = { fg = c.syntax.property },
     ["@tag.delimiter"] = { fg = c.fg.muted },
 
-    ["@punctuation"] = { fg = c.fg.secondary },
-    ["@punctuation.bracket"] = { fg = c.fg.secondary },
-    ["@punctuation.delimiter"] = { fg = c.fg.secondary },
-    ["@punctuation.special"] = { fg = c.syntax.property },
+    ["@punctuation"] = { fg = c.fg.bracket },
+    ["@punctuation.bracket"] = { fg = c.fg.bracket },
+    ["@punctuation.delimiter"] = { fg = c.fg.bracket },
+    ["@punctuation.special"] = { fg = c.fg.accent },
 
     -- ============================================================
     -- LSP semantic tokens
@@ -290,7 +308,7 @@ function M.get_groups(colors, config)
     DiagnosticVirtualTextHint = { fg = c.special.hint, italic = true },
     DiagnosticVirtualTextOk = { fg = c.special.success, italic = true },
 
-    DiagnosticUnderlineError = { fg = c.special.error, sp = c.special.error, undercurl = true },
+    DiagnosticUnderlineError = { sp = c.special.error, undercurl = true },
     DiagnosticUnderlineWarn = { sp = c.special.warning, undercurl = true },
     DiagnosticUnderlineInfo = { sp = c.special.info, undercurl = true },
     DiagnosticUnderlineHint = { sp = c.special.hint, undercurl = true },
