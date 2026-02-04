@@ -290,7 +290,7 @@ function M.get_groups(colors, config)
     DiagnosticVirtualTextHint = { fg = c.special.hint, italic = true },
     DiagnosticVirtualTextOk = { fg = c.special.success, italic = true },
 
-    DiagnosticUnderlineError = { sp = c.special.error, undercurl = true },
+    DiagnosticUnderlineError = { fg = c.special.error, sp = c.special.error, undercurl = true },
     DiagnosticUnderlineWarn = { sp = c.special.warning, undercurl = true },
     DiagnosticUnderlineInfo = { sp = c.special.info, undercurl = true },
     DiagnosticUnderlineHint = { sp = c.special.hint, undercurl = true },

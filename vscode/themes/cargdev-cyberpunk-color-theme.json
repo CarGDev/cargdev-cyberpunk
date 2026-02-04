@@ -226,7 +226,7 @@
                 "punctuation.definition.string"
             ],
             "settings": {
-                "foreground": "#FFFFFF"
+                "foreground": "#5AF78E"
             }
         },
         {
@@ -780,7 +780,7 @@
             "foreground": "#666666",
             "fontStyle": "italic"
         },
-        "string": "#FFFFFF",
+        "string": "#5AF78E",
         "number": "#FFB86C",
         "regexp": "#FF5555",
         "operator": "#FF79C6",
