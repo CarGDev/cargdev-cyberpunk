@@ -1,8 +1,0 @@
-{
-    "files.autoSaveDelay": 1000,
-    "editor.tabSize": 2,
-    "workbench.colorTheme": "Default Dark+",
-    "terminal.integrated.fontSize": 14,
-    "editor.fontSize": 14,
-    "files.autoSave": "afterDelay"
-}
