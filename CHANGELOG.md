@@ -156,7 +156,7 @@ _No unreleased changes._
 - **Warnings**: `#FFB86C` (orange)
 - **Info**: `#8BE9FD` (cyan)
 
-[Unreleased]: https://github.com/yourusername/cargdev-cyberpunk.nvim/compare/v1.1.1...HEAD
-[1.1.1]: https://github.com/yourusername/cargdev-cyberpunk.nvim/compare/v1.1.0...v1.1.1
-[1.1.0]: https://github.com/yourusername/cargdev-cyberpunk.nvim/compare/v1.0.0...v1.1.0
-[1.0.0]: https://github.com/yourusername/cargdev-cyberpunk.nvim/releases/tag/v1.0.0
+[Unreleased]: https://github.com/CarGDev/cargdev-cyberpunk/compare/v1.1.1...HEAD
+[1.1.1]: https://github.com/CarGDev/cargdev-cyberpunk/compare/v1.1.0...v1.1.1
+[1.1.0]: https://github.com/CarGDev/cargdev-cyberpunk/compare/v1.0.0...v1.1.0
+[1.0.0]: https://github.com/CarGDev/cargdev-cyberpunk/releases/tag/v1.0.0

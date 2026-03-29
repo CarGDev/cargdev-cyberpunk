@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Stylua
+        uses: JohnnyMorganz/stylua-action@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          version: latest
+          args: --check .
+
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: rhysd/action-setup-vim@v1
+        with:
+          neovim: true
+          version: nightly
+
+      - name: Run tests
+        run: nvim --headless -c "lua dofile('test/test_colors.lua')"
