@@ -8,18 +8,6 @@ function M.get_groups(colors, config)
   local c = colors
   local cfg = config
 
-  -- Helper for conditional styles
-  local function style(bold, italic)
-    local s = {}
-    if bold then
-      s.bold = true
-    end
-    if italic then
-      s.italic = true
-    end
-    return s
-  end
-
   local bold_kw = cfg.bold_keywords and { bold = true } or {}
   local bold_fn = cfg.bold_functions and { bold = true } or {}
   local bold_ty = cfg.bold_types and { bold = true } or {}

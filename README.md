@@ -77,7 +77,7 @@ A vibrant, high-contrast Neovim color scheme crafted for developers who thrive i
 
 ```lua
 {
-  "yourusername/cargdev-cyberpunk.nvim",
+  "CarGDev/cargdev-cyberpunk",
   lazy = false,
   priority = 1000,
   config = function()
@@ -90,7 +90,7 @@ A vibrant, high-contrast Neovim color scheme crafted for developers who thrive i
 
 ```lua
 use {
-  "yourusername/cargdev-cyberpunk.nvim",
+  "CarGDev/cargdev-cyberpunk",
   config = function()
     require("cargdev-cyberpunk").setup()
   end
@@ -100,7 +100,7 @@ use {
 ### Using vim-plug
 
 ```vim
-Plug 'yourusername/cargdev-cyberpunk.nvim'
+Plug 'CarGDev/cargdev-cyberpunk'
 ```
 
 Then in your Lua config:
@@ -114,7 +114,7 @@ require("cargdev-cyberpunk").setup()
 Clone this repository to your Neovim plugins directory:
 
 ```bash
-git clone https://github.com/yourusername/cargdev-cyberpunk.nvim \
+git clone https://github.com/CarGDev/cargdev-cyberpunk \
   ~/.local/share/nvim/site/pack/plugins/start/cargdev-cyberpunk.nvim
 ```
 
@@ -423,7 +423,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you encounter any issues or have questions:
 
-1. Check the [Issues](https://github.com/yourusername/cargdev-cyberpunk.nvim/issues) page
+1. Check the [Issues](https://github.com/CarGDev/cargdev-cyberpunk/issues) page
 2. Create a new issue with detailed information
 3. Include your Neovim version and configuration
 

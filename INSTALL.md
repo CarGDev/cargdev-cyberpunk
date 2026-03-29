@@ -17,7 +17,7 @@ Add this to your Neovim configuration:
 ```lua
 -- In your plugins.lua or init.lua
 {
-  "yourusername/cargdev-cyberpunk.nvim",
+  "CarGDev/cargdev-cyberpunk",
   lazy = false,      -- Load during startup
   priority = 1000,   -- Load before other plugins
   config = function()
@@ -30,7 +30,7 @@ Add this to your Neovim configuration:
 
 ```lua
 use {
-  "yourusername/cargdev-cyberpunk.nvim",
+  "CarGDev/cargdev-cyberpunk",
   config = function()
     require("cargdev-cyberpunk").setup()
   end
@@ -41,7 +41,7 @@ use {
 
 ```vim
 " In your .vimrc or init.vim
-Plug 'yourusername/cargdev-cyberpunk.nvim'
+Plug 'CarGDev/cargdev-cyberpunk'
 ```
 
 Then in your Neovim Lua configuration:
@@ -55,7 +55,7 @@ require("cargdev-cyberpunk").setup()
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/cargdev-cyberpunk.nvim \
+git clone https://github.com/CarGDev/cargdev-cyberpunk \
   ~/.local/share/nvim/site/pack/plugins/start/cargdev-cyberpunk.nvim
 ```
 
@@ -242,7 +242,7 @@ To remove the color scheme:
 
 If you encounter issues:
 
-1. Check the [Issues](https://github.com/yourusername/cargdev-cyberpunk.nvim/issues) page
+1. Check the [Issues](https://github.com/CarGDev/cargdev-cyberpunk/issues) page
 2. Create a new issue with:
    - Your Neovim version (`:version`)
    - Plugin manager and configuration

@@ -6,7 +6,7 @@ M.description = "A vibrant Neovim color scheme with cyberpunk aesthetics"
 M.version = "1.1.1"
 M.author = "CargDev"
 M.license = "MIT"
-M.repository = "https://github.com/yourusername/cargdev-cyberpunk.nvim"
+M.repository = "https://github.com/CarGDev/cargdev-cyberpunk"
 
 ---Plugin configuration for lazy.nvim
 ---@param opts? CargdevCyberpunkConfig
