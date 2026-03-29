@@ -5,6 +5,14 @@ All notable changes to CargDev-Cyberpunk.nvim will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.1](https://github.com/CarGDev/cargdev-cyberpunk/compare/v1.2.0...v1.2.1) (2026-03-29)
+
+
+### Bug Fixes
+
+* **ci:** format code with stylua and fix test runtimepath ([aa5d351](https://github.com/CarGDev/cargdev-cyberpunk/commit/aa5d351cfb3441c077923dce46b411c6a38c0b77))
+* remove .codetyper from tracking and add to .gitignore ([22f2a27](https://github.com/CarGDev/cargdev-cyberpunk/commit/22f2a277b194850bd55c08caa75e9fd777eb2103))
+
 ## [Unreleased]
 
 _No unreleased changes._
