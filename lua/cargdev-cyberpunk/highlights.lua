@@ -11,8 +11,12 @@ function M.get_groups(colors, config)
   -- Helper for conditional styles
   local function style(bold, italic)
     local s = {}
-    if bold then s.bold = true end
-    if italic then s.italic = true end
+    if bold then
+      s.bold = true
+    end
+    if italic then
+      s.italic = true
+    end
     return s
   end
 
@@ -289,9 +293,9 @@ function M.get_groups(colors, config)
     ["@lsp.type.decorator"] = { fg = c.syntax.property, bold = true },
 
     ["@lsp.mod.deprecated"] = { strikethrough = true },
-    ["@lsp.mod.readonly"] = {},  -- Don't change color for const, keep variable color
+    ["@lsp.mod.readonly"] = {}, -- Don't change color for const, keep variable color
     ["@lsp.mod.defaultLibrary"] = { fg = c.syntax.constant },
-    ["@lsp.mod.unused"] = { fg = c.fg.unused },  -- Gray for unused variables/imports
+    ["@lsp.mod.unused"] = { fg = c.fg.unused }, -- Gray for unused variables/imports
 
     -- ============================================================
     -- Diagnostics

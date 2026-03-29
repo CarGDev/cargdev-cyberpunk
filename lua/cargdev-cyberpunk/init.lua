@@ -95,7 +95,8 @@ function M.setup_file_explorer_bg()
     group = augroup,
     pattern = "nerdtree",
     callback = function()
-      vim.opt_local.winhighlight = "Normal:NERDTreeNormal,EndOfBuffer:NERDTreeEndOfBuffer,WinSeparator:NERDTreeWinSeparator"
+      vim.opt_local.winhighlight =
+        "Normal:NERDTreeNormal,EndOfBuffer:NERDTreeEndOfBuffer,WinSeparator:NERDTreeWinSeparator"
     end,
   })
 end

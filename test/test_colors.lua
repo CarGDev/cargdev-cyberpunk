@@ -102,9 +102,18 @@ local function test_highlights()
 
   -- Test essential highlight groups exist
   local essential_groups = {
-    "Normal", "NormalFloat", "Comment", "String", "Function",
-    "Keyword", "Type", "DiagnosticError", "DiagnosticWarn",
-    "TelescopeBorder", "NvimTreeNormal", "GitSignsAdd",
+    "Normal",
+    "NormalFloat",
+    "Comment",
+    "String",
+    "Function",
+    "Keyword",
+    "Type",
+    "DiagnosticError",
+    "DiagnosticWarn",
+    "TelescopeBorder",
+    "NvimTreeNormal",
+    "GitSignsAdd",
   }
 
   for _, group in ipairs(essential_groups) do

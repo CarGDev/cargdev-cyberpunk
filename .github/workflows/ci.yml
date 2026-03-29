@@ -30,4 +30,4 @@ jobs:
           version: nightly
 
       - name: Run tests
-        run: nvim --headless -c "lua dofile('test/test_colors.lua')"
+        run: nvim --headless --cmd "set rtp+=." -c "lua dofile('test/test_colors.lua')"
