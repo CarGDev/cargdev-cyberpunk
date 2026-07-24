@@ -13,82 +13,82 @@ function M.get_groups(colors, config)
   local bold_ty = cfg.bold_types and { bold = true } or {}
   local italic_comment = cfg.italic_comments and { italic = true } or {}
 
-  local bg_primary = cfg.transparent and "NONE" or c.bg.primary
+  local bg_primary = cfg.transparent and "NONE" or c.black
 
   return {
-    -- ============================================================
+    -- ===========================================================e
     -- Editor UI
     -- ============================================================
-    Normal = { fg = c.fg.primary, bg = bg_primary },
-    NormalFloat = { fg = c.fg.primary, bg = c.bg.float },
-    NormalNC = { fg = c.fg.primary, bg = bg_primary },
-    FloatBorder = { fg = c.fg.accent, bg = c.bg.float },
-    FloatTitle = { fg = c.fg.accent, bg = c.bg.float, bold = true },
+    Normal = { fg = c.fg.secondary, bg = bg_primary },
+    NormalFloat = { fg = c.fg.secondary, bg = c.bg0 },
+    NormalNC = { fg = c.fg.secondary, bg = bg_primary },
+    FloatBorder = { fg = c.purple, bg = c.bg0 },
+    FloatTitle = { fg = c.purple, bg = c.bg0, bold = true },
 
     -- Line numbers
-    LineNr = { fg = c.fg.muted },
-    LineNrAbove = { fg = c.fg.muted },
-    LineNrBelow = { fg = c.fg.muted },
-    CursorLineNr = { fg = c.fg.accent, bold = true },
-    SignColumn = { fg = c.fg.muted, bg = bg_primary },
-    FoldColumn = { fg = c.fg.muted, bg = bg_primary },
+    LineNr = { fg = c.light_grey },
+    LineNrAbove = { fg = c.light_grey },
+    LineNrBelow = { fg = c.light_grey },
+    CursorLineNr = { fg = c.purple, bold = true },
+    SignColumn = { fg = c.light_grey, bg = bg_primary },
+    FoldColumn = { fg = c.light_grey, bg = bg_primary },
 
     -- Cursor
-    Cursor = { fg = c.bg.primary, bg = c.fg.accent },
-    lCursor = { fg = c.bg.primary, bg = c.fg.accent },
-    CursorIM = { fg = c.bg.primary, bg = c.fg.accent },
-    CursorLine = { bg = c.bg.highlight },
-    CursorColumn = { bg = c.bg.highlight },
-    ColorColumn = { bg = c.bg.secondary },
-    Conceal = { fg = c.fg.muted },
+    Cursor = { fg = c.black, bg = c.purple },
+    lCursor = { fg = c.black, bg = c.purple },
+    CursorIM = { fg = c.black, bg = c.purple },
+    CursorLine = { bg = c.magenta },
+    CursorColumn = { bg = c.magenta },
+    ColorColumn = { bg = c.bg0 },
+    Conceal = { fg = c.light_grey },
 
     -- Visual
-    Visual = { bg = c.bg.selection },
-    VisualNOS = { bg = c.bg.selection },
+    Visual = { fg = c.white, bg = c.dark_purple },
+    VisualNOS = { fg = c.white, bg = c.bg3 },
 
     -- Search
-    Search = { fg = c.bg.primary, bg = c.special.warning },
-    IncSearch = { fg = c.bg.primary, bg = c.syntax.number },
-    CurSearch = { fg = c.bg.primary, bg = c.special.warning, bold = true },
-    Substitute = { fg = c.bg.primary, bg = c.special.error },
+    Search = { fg = c.black, bg = c.yellow },
+    IncSearch = { fg = c.black, bg = c.syntax.number },
+    CurSearch = { fg = c.black, bg = c.special.warning, bold = true },
+    Substitute = { fg = c.black, bg = c.special.error },
 
     -- Status line
-    StatusLine = { fg = c.fg.primary, bg = c.bg.secondary },
-    StatusLineNC = { fg = c.fg.muted, bg = c.bg.secondary },
-    StatusLineTerm = { fg = c.fg.primary, bg = c.bg.secondary },
-    StatusLineTermNC = { fg = c.fg.muted, bg = c.bg.secondary },
-    WinBar = { fg = c.fg.primary, bg = bg_primary },
-    WinBarNC = { fg = c.fg.muted, bg = bg_primary },
+    StatusLine = { fg = c.fg.secondary, bg = c.bg0 },
+    StatusLineNC = { fg = c.light_grey, bg = c.bg0 },
+    StatusLineTerm = { fg = c.fg.secondary, bg = c.bg0 },
+    StatusLineTermNC = { fg = c.light_grey, bg = c.bg0 },
+    WinBar = { fg = c.fg.secondary, bg = bg_primary },
+    WinBarNC = { fg = c.light_grey, bg = bg_primary },
     WinSeparator = { fg = c.bg.tertiary, bg = bg_primary },
     VertSplit = { fg = c.bg.tertiary, bg = bg_primary },
 
     -- Tab line
-    TabLine = { fg = c.fg.muted, bg = c.bg.secondary },
-    TabLineFill = { bg = c.bg.secondary },
-    TabLineSel = { fg = c.fg.accent, bg = c.bg.tertiary, bold = true },
+    TabLine = { fg = c.light_grey, bg = c.bg0 },
+    TabLineFill = { bg = c.bg0 },
+    TabLineSel = { fg = c.purple, bg = c.bg.tertiary, bold = true },
 
     -- Popup menu
-    Pmenu = { fg = c.fg.primary, bg = c.bg.float },
-    PmenuSel = { fg = c.bg.primary, bg = c.fg.accent },
-    PmenuSbar = { bg = c.bg.float },
-    PmenuThumb = { bg = c.bg.highlight },
+    Pmenu = { fg = c.fg.secondary, bg = c.bg0 },
+    PmenuSel = { fg = c.black, bg = c.purple },
+    PmenuSbar = { bg = c.bg0 },
+    PmenuThumb = { bg = c.magenta },
 
     -- Messages
-    ModeMsg = { fg = c.fg.primary, bold = true },
-    MsgArea = { fg = c.fg.primary },
-    MsgSeparator = { fg = c.fg.muted },
+    ModeMsg = { fg = c.fg.secondary, bold = true },
+    MsgArea = { fg = c.fg.secondary },
+    MsgSeparator = { fg = c.light_grey },
     MoreMsg = { fg = c.special.info },
     Question = { fg = c.special.info },
     ErrorMsg = { fg = c.special.error, bold = true },
     WarningMsg = { fg = c.special.warning, bold = true },
 
     -- Folds
-    Folded = { fg = c.fg.muted, bg = c.bg.secondary },
-    MatchParen = { fg = c.special.warning, bg = c.bg.selection, bold = true },
-    NonText = { fg = c.fg.muted },
-    SpecialKey = { fg = c.fg.muted },
-    Whitespace = { fg = c.bg.selection },
-    EndOfBuffer = { fg = c.bg.primary },
+    Folded = { fg = c.light_grey, bg = c.bg0 },
+    MatchParen = { fg = c.special.warning, bg = c.bright_red, bold = true },
+    NonText = { fg = c.light_grey },
+    SpecialKey = { fg = c.light_grey },
+    Whitespace = { fg = c.bright_red },
+    EndOfBuffer = { fg = c.black },
 
     -- Directory
     Directory = { fg = c.syntax["function"], bold = true },
@@ -98,7 +98,7 @@ function M.get_groups(colors, config)
     DiffAdd = { fg = c.special.diff_add, bg = "#1a3a1a" },
     DiffChange = { fg = c.special.diff_change, bg = "#3a3a1a" },
     DiffDelete = { fg = c.special.diff_delete, bg = "#3a1a1a" },
-    DiffText = { fg = c.fg.primary, bg = c.special.diff_change },
+    DiffText = { fg = c.fg.secondary, bg = c.special.diff_change },
 
     -- Spell
     SpellBad = { sp = c.special.error, undercurl = true },
@@ -117,7 +117,7 @@ function M.get_groups(colors, config)
     Float = { fg = c.syntax.number },
 
     Identifier = { fg = c.syntax.variable },
-    Function = vim.tbl_extend("force", { fg = c.syntax["function"] }, bold_fn),
+    Function = vim.tbl_extend("force", { fg = c.bright_magenta }, bold_fn),
 
     Statement = vim.tbl_extend("force", { fg = c.syntax.keyword }, bold_kw),
     Conditional = vim.tbl_extend("force", { fg = c.syntax.keyword }, bold_kw),
@@ -146,15 +146,15 @@ function M.get_groups(colors, config)
     Debug = { fg = c.syntax.property },
 
     Underlined = { underline = true },
-    Ignore = { fg = c.fg.muted },
+    Ignore = { fg = c.light_grey },
     Error = { fg = c.special.error, bold = true },
     Todo = { fg = c.special.warning, bold = true },
 
     -- ============================================================
     -- Language-specific (TypeScript/JavaScript)
     -- ============================================================
-    typescriptBlock = { fg = c.fg.accent },
-    typescriptBraces = { fg = c.fg.accent },
+    typescriptBlock = { fg = c.purple },
+    typescriptBraces = { fg = c.purple },
     typescriptParens = { fg = c.fg.bracket },
     typescriptEndColons = { fg = c.fg.bracket },
     typescriptIdentifierName = { fg = c.syntax.variable },
@@ -171,7 +171,7 @@ function M.get_groups(colors, config)
     -- ============================================================
     -- Treesitter highlights
     -- ============================================================
-    ["@text"] = { fg = c.fg.primary },
+    ["@text"] = { fg = c.white },
     ["@text.strong"] = { bold = true },
     ["@text.emphasis"] = { italic = true },
     ["@text.underline"] = { underline = true },
@@ -179,7 +179,7 @@ function M.get_groups(colors, config)
     ["@text.literal"] = { fg = c.syntax.string },
     ["@text.uri"] = { fg = c.syntax["function"], underline = true },
     ["@text.title"] = { fg = c.syntax.keyword, bold = true },
-    ["@text.reference"] = { fg = c.fg.accent },
+    ["@text.reference"] = { fg = c.purple },
 
     ["@comment"] = vim.tbl_extend("force", { fg = c.syntax.comment }, italic_comment),
     ["@comment.documentation"] = { fg = c.syntax.comment },
@@ -253,12 +253,12 @@ function M.get_groups(colors, config)
 
     ["@tag"] = { fg = c.syntax.keyword, bold = true },
     ["@tag.attribute"] = { fg = c.syntax.property },
-    ["@tag.delimiter"] = { fg = c.fg.muted },
+    ["@tag.delimiter"] = { fg = c.light_grey },
 
-    ["@punctuation"] = { fg = c.fg.bracket },
-    ["@punctuation.bracket"] = { fg = c.fg.bracket },
-    ["@punctuation.delimiter"] = { fg = c.fg.bracket },
-    ["@punctuation.special"] = { fg = c.fg.accent },
+    ["@punctuation"] = { fg = c.fg.secondary.bracket },
+    ["@punctuation.bracket"] = { fg = c.fg.secondary.bracket },
+    ["@punctuation.delimiter"] = { fg = c.fg.secondary.bracket },
+    ["@punctuation.special"] = { fg = c.purple },
 
     -- ============================================================
     -- LSP semantic tokens
@@ -324,13 +324,13 @@ function M.get_groups(colors, config)
     -- ============================================================
     -- LSP
     -- ============================================================
-    LspReferenceText = { bg = c.bg.selection },
-    LspReferenceRead = { bg = c.bg.selection },
-    LspReferenceWrite = { bg = c.bg.selection },
+    LspReferenceText = { fg = c.white, bg = c.dark_cyan },
+    LspReferenceRead = { fg = c.white, bg = c.dark_cyan },
+    LspReferenceWrite = { fg = c.white, bg = c.fg.bracket },
     LspSignatureActiveParameter = { fg = c.special.warning, bold = true },
-    LspCodeLens = { fg = c.fg.muted, italic = true },
-    LspCodeLensSeparator = { fg = c.fg.muted },
-    LspInlayHint = { fg = c.fg.muted, italic = true },
+    LspCodeLens = { fg = c.light_grey, italic = true },
+    LspCodeLensSeparator = { fg = c.light_grey },
+    LspInlayHint = { fg = c.light_grey, italic = true },
 
     -- ============================================================
     -- Git (built-in)
@@ -340,9 +340,9 @@ function M.get_groups(colors, config)
     diffChanged = { fg = c.special.diff_change },
     diffOldFile = { fg = c.special.diff_delete },
     diffNewFile = { fg = c.special.diff_add },
-    diffFile = { fg = c.fg.accent },
-    diffLine = { fg = c.fg.muted },
-    diffIndexLine = { fg = c.fg.accent },
+    diffFile = { fg = c.purple },
+    diffLine = { fg = c.light_grey },
+    diffIndexLine = { fg = c.purple },
 
     -- ============================================================
     -- Plugin: GitSigns
@@ -356,97 +356,97 @@ function M.get_groups(colors, config)
     GitSignsAddLn = { bg = "#1a3a1a" },
     GitSignsChangeLn = { bg = "#3a3a1a" },
     GitSignsDeleteLn = { bg = "#3a1a1a" },
-    GitSignsCurrentLineBlame = { fg = c.fg.muted, italic = true },
+    GitSignsCurrentLineBlame = { fg = c.light_grey, italic = true },
 
     -- ============================================================
     -- Plugin: Telescope
     -- ============================================================
-    TelescopeBorder = { fg = c.fg.accent, bg = c.bg.float },
-    TelescopeNormal = { fg = c.fg.primary, bg = c.bg.float },
-    TelescopeTitle = { fg = c.fg.accent, bold = true },
-    TelescopePromptBorder = { fg = c.fg.accent, bg = c.bg.float },
-    TelescopePromptNormal = { fg = c.fg.primary, bg = c.bg.float },
+    TelescopeBorder = { fg = c.purple, bg = c.bg0 },
+    TelescopeNormal = { fg = c.fg.secondary, bg = c.bg0 },
+    TelescopeTitle = { fg = c.purple, bold = true },
+    TelescopePromptBorder = { fg = c.purple, bg = c.bg0 },
+    TelescopePromptNormal = { fg = c.fg.secondary, bg = c.bg0 },
     TelescopePromptTitle = { fg = c.syntax.keyword, bold = true },
     TelescopePromptPrefix = { fg = c.syntax.keyword },
-    TelescopeResultsBorder = { fg = c.fg.accent, bg = c.bg.float },
-    TelescopeResultsNormal = { fg = c.fg.primary, bg = c.bg.float },
-    TelescopeResultsTitle = { fg = c.fg.accent, bold = true },
-    TelescopePreviewBorder = { fg = c.fg.accent, bg = c.bg.float },
-    TelescopePreviewNormal = { fg = c.fg.primary, bg = c.bg.float },
+    TelescopeResultsBorder = { fg = c.purple, bg = c.bg0 },
+    TelescopeResultsNormal = { fg = c.fg.secondary, bg = c.bg0 },
+    TelescopeResultsTitle = { fg = c.purple, bold = true },
+    TelescopePreviewBorder = { fg = c.purple, bg = c.bg0 },
+    TelescopePreviewNormal = { fg = c.fg.secondary, bg = c.bg0 },
     TelescopePreviewTitle = { fg = c.syntax["function"], bold = true },
-    TelescopeSelection = { fg = c.fg.primary, bg = c.bg.selection },
+    TelescopeSelection = { fg = c.fg.secondary, bg = c.bright_red },
     TelescopeSelectionCaret = { fg = c.syntax.keyword },
     TelescopeMatching = { fg = c.special.warning, bold = true },
 
     -- ============================================================
     -- Plugin: NvimTree
     -- ============================================================
-    NvimTreeNormal = { fg = c.fg.primary, bg = c.bg.secondary },
-    NvimTreeNormalNC = { fg = c.fg.primary, bg = c.bg.secondary },
+    NvimTreeNormal = { fg = c.fg.secondary, bg = c.bg0 },
+    NvimTreeNormalNC = { fg = c.fg.secondary, bg = c.bg0 },
     NvimTreeRootFolder = { fg = c.syntax.keyword, bold = true },
-    NvimTreeFolderName = { fg = c.syntax["function"] },
-    NvimTreeFolderIcon = { fg = c.fg.accent },
-    NvimTreeOpenedFolderName = { fg = c.syntax["function"], bold = true },
-    NvimTreeEmptyFolderName = { fg = c.fg.muted },
-    NvimTreeIndentMarker = { fg = c.bg.tertiary },
+    NvimTreeFolderName = { fg = c.green },
+    NvimTreeFolderIcon = { fg = c.green },
+    NvimTreeOpenedFolderName = { fg = c.green, bold = true },
+    NvimTreeEmptyFolderName = { fg = c.light_grey },
+    NvimTreeIndentMarker = { fg = c.white },
     NvimTreeGitDirty = { fg = c.special.diff_change },
     NvimTreeGitNew = { fg = c.special.diff_add },
     NvimTreeGitDeleted = { fg = c.special.diff_delete },
     NvimTreeGitStaged = { fg = c.special.success },
     NvimTreeSpecialFile = { fg = c.syntax.keyword, underline = true },
     NvimTreeImageFile = { fg = c.fg.secondary },
-    NvimTreeSymlink = { fg = c.fg.accent },
-    NvimTreeWinSeparator = { fg = c.bg.tertiary, bg = c.bg.secondary },
+    NvimTreeSymlink = { fg = c.purple },
+    NvimTreeWinSeparator = { fg = c.green, bg = c.bg0 },
 
     -- ============================================================
     -- Plugin: Neo-tree
     -- ============================================================
-    NeoTreeNormal = { fg = c.fg.primary, bg = c.bg.secondary },
-    NeoTreeNormalNC = { fg = c.fg.primary, bg = c.bg.secondary },
+    NeoTreeNormal = { fg = c.fg.secondary, bg = c.bg0 },
+    NeoTreeNormalNC = { fg = c.fg.secondary, bg = c.bg0 },
     NeoTreeRootName = { fg = c.syntax.keyword, bold = true },
     NeoTreeDirectoryName = { fg = c.syntax["function"] },
-    NeoTreeDirectoryIcon = { fg = c.fg.accent },
-    NeoTreeFileName = { fg = c.fg.primary },
+    NeoTreeDirectoryIcon = { fg = c.purple },
+    NeoTreeFileName = { fg = c.fg.secondary },
     NeoTreeFileIcon = { fg = c.fg.secondary },
     NeoTreeGitAdded = { fg = c.special.diff_add },
     NeoTreeGitModified = { fg = c.special.diff_change },
     NeoTreeGitDeleted = { fg = c.special.diff_delete },
     NeoTreeGitConflict = { fg = c.special.error },
-    NeoTreeGitUntracked = { fg = c.fg.muted },
+    NeoTreeGitUntracked = { fg = c.light_grey },
     NeoTreeIndentMarker = { fg = c.bg.tertiary },
-    NeoTreeWinSeparator = { fg = c.bg.tertiary, bg = c.bg.secondary },
+    NeoTreeWinSeparator = { fg = c.bg.tertiary, bg = c.bg0 },
 
     -- ============================================================
     -- Plugin: NERDTree
     -- ============================================================
     NERDTreeDir = { fg = c.syntax["function"] },
     NERDTreeDirSlash = { fg = c.syntax["function"] },
-    NERDTreeOpenable = { fg = c.fg.accent },
-    NERDTreeClosable = { fg = c.fg.accent },
-    NERDTreeFile = { fg = c.fg.primary },
+    NERDTreeOpenable = { fg = c.purple },
+    NERDTreeClosable = { fg = c.purple },
+    NERDTreeFile = { fg = c.white },
     NERDTreeExecFile = { fg = c.special.success, bold = true },
-    NERDTreeUp = { fg = c.fg.muted },
+    NERDTreeUp = { fg = c.light_grey },
     NERDTreeCWD = { fg = c.syntax.keyword, bold = true },
-    NERDTreeHelp = { fg = c.fg.muted },
+    NERDTreeHelp = { fg = c.light_grey },
     NERDTreeToggleOn = { fg = c.special.success },
     NERDTreeToggleOff = { fg = c.special.error },
-    NERDTreeFlags = { fg = c.fg.accent },
-    NERDTreeLinkFile = { fg = c.fg.accent },
-    NERDTreeLinkTarget = { fg = c.fg.muted },
-    NERDTreeLinkDir = { fg = c.fg.accent },
+    NERDTreeFlags = { fg = c.purple },
+    NERDTreeLinkFile = { fg = c.purple },
+    NERDTreeLinkTarget = { fg = c.light_grey },
+    NERDTreeLinkDir = { fg = c.purple },
     NERDTreeBookmarksHeader = { fg = c.syntax.keyword, bold = true },
-    NERDTreeBookmarkName = { fg = c.fg.accent },
+    NERDTreeBookmarkName = { fg = c.purple },
     NERDTreeRO = { fg = c.special.warning },
 
     -- ============================================================
     -- Plugin: nvim-cmp
     -- ============================================================
-    CmpItemAbbr = { fg = c.fg.primary },
-    CmpItemAbbrDeprecated = { fg = c.fg.muted, strikethrough = true },
+    CmpItemAbbr = { fg = c.fg.secondary },
+    CmpItemAbbrDeprecated = { fg = c.light_grey, strikethrough = true },
     CmpItemAbbrMatch = { fg = c.special.warning, bold = true },
     CmpItemAbbrMatchFuzzy = { fg = c.special.warning, bold = true },
-    CmpItemKind = { fg = c.fg.accent },
-    CmpItemMenu = { fg = c.fg.muted },
+    CmpItemKind = { fg = c.purple },
+    CmpItemMenu = { fg = c.light_grey },
     CmpItemKindClass = { fg = c.syntax.type },
     CmpItemKindColor = { fg = c.syntax.number },
     CmpItemKindConstant = { fg = c.syntax.constant },
@@ -464,10 +464,10 @@ function M.get_groups(colors, config)
     CmpItemKindModule = { fg = c.syntax.type },
     CmpItemKindOperator = { fg = c.syntax.operator },
     CmpItemKindProperty = { fg = c.syntax.property },
-    CmpItemKindReference = { fg = c.fg.accent },
+    CmpItemKindReference = { fg = c.purple },
     CmpItemKindSnippet = { fg = c.syntax.string },
     CmpItemKindStruct = { fg = c.syntax.type },
-    CmpItemKindText = { fg = c.fg.primary },
+    CmpItemKindText = { fg = c.fg.secondary },
     CmpItemKindTypeParameter = { fg = c.syntax.type },
     CmpItemKindUnit = { fg = c.syntax.number },
     CmpItemKindValue = { fg = c.syntax.constant },
@@ -477,40 +477,40 @@ function M.get_groups(colors, config)
     -- Plugin: indent-blankline
     -- ============================================================
     IndentBlanklineChar = { fg = c.bg.tertiary, nocombine = true },
-    IndentBlanklineContextChar = { fg = c.fg.muted, nocombine = true },
-    IndentBlanklineContextStart = { sp = c.fg.muted, underline = true },
+    IndentBlanklineContextChar = { fg = c.light_grey, nocombine = true },
+    IndentBlanklineContextStart = { sp = c.light_grey, underline = true },
     IblIndent = { fg = c.bg.tertiary, nocombine = true },
-    IblScope = { fg = c.fg.muted, nocombine = true },
+    IblScope = { fg = c.light_grey, nocombine = true },
 
     -- ============================================================
     -- Plugin: which-key
     -- ============================================================
     WhichKey = { fg = c.syntax.keyword },
-    WhichKeyGroup = { fg = c.fg.accent },
-    WhichKeyDesc = { fg = c.fg.primary },
-    WhichKeySeparator = { fg = c.fg.muted },
-    WhichKeyFloat = { bg = c.bg.float },
-    WhichKeyValue = { fg = c.fg.muted },
+    WhichKeyGroup = { fg = c.purple },
+    WhichKeyDesc = { fg = c.fg.secondary },
+    WhichKeySeparator = { fg = c.light_grey },
+    WhichKeyFloat = { bg = c.bg0 },
+    WhichKeyValue = { fg = c.light_grey },
 
     -- ============================================================
     -- Plugin: Lazy.nvim
     -- ============================================================
-    LazyButton = { fg = c.fg.primary, bg = c.bg.secondary },
-    LazyButtonActive = { fg = c.bg.primary, bg = c.fg.accent, bold = true },
-    LazyComment = { fg = c.fg.muted },
-    LazyCommit = { fg = c.fg.accent },
+    LazyButton = { fg = c.fg.secondary, bg = c.bg0 },
+    LazyButtonActive = { fg = c.black, bg = c.purple, bold = true },
+    LazyComment = { fg = c.light_grey },
+    LazyCommit = { fg = c.purple },
     LazyCommitIssue = { fg = c.syntax.number },
     LazyCommitScope = { fg = c.syntax.property },
     LazyCommitType = { fg = c.syntax.keyword },
-    LazyDimmed = { fg = c.fg.muted },
+    LazyDimmed = { fg = c.light_grey },
     LazyDir = { fg = c.syntax["function"] },
-    LazyH1 = { fg = c.bg.primary, bg = c.fg.accent, bold = true },
-    LazyH2 = { fg = c.fg.accent, bold = true },
+    LazyH1 = { fg = c.black, bg = c.purple, bold = true },
+    LazyH2 = { fg = c.purple, bold = true },
     LazyNoCond = { fg = c.special.error },
-    LazyNormal = { fg = c.fg.primary, bg = c.bg.float },
+    LazyNormal = { fg = c.fg.secondary, bg = c.bg0 },
     LazyProgressDone = { fg = c.special.success },
-    LazyProgressTodo = { fg = c.fg.muted },
-    LazyProp = { fg = c.fg.muted },
+    LazyProgressTodo = { fg = c.light_grey },
+    LazyProp = { fg = c.light_grey },
     LazyReasonCmd = { fg = c.syntax.keyword },
     LazyReasonEvent = { fg = c.syntax.number },
     LazyReasonFt = { fg = c.syntax.type },
@@ -519,22 +519,22 @@ function M.get_groups(colors, config)
     LazyReasonPlugin = { fg = c.syntax["function"] },
     LazyReasonSource = { fg = c.syntax.property },
     LazyReasonStart = { fg = c.special.success },
-    LazySpecial = { fg = c.fg.accent },
-    LazyTaskOutput = { fg = c.fg.primary },
+    LazySpecial = { fg = c.purple },
+    LazyTaskOutput = { fg = c.fg.secondary },
     LazyUrl = { fg = c.syntax["function"], underline = true },
     LazyValue = { fg = c.syntax.string },
 
     -- ============================================================
     -- Plugin: Mason
     -- ============================================================
-    MasonHeader = { fg = c.bg.primary, bg = c.fg.accent, bold = true },
-    MasonHeaderSecondary = { fg = c.bg.primary, bg = c.syntax.keyword, bold = true },
-    MasonHighlight = { fg = c.fg.accent },
-    MasonHighlightBlock = { fg = c.bg.primary, bg = c.fg.accent },
-    MasonHighlightBlockBold = { fg = c.bg.primary, bg = c.fg.accent, bold = true },
+    MasonHeader = { fg = c.black, bg = c.purple, bold = true },
+    MasonHeaderSecondary = { fg = c.black, bg = c.syntax.keyword, bold = true },
+    MasonHighlight = { fg = c.purple },
+    MasonHighlightBlock = { fg = c.black, bg = c.purple },
+    MasonHighlightBlockBold = { fg = c.black, bg = c.purple, bold = true },
     MasonHighlightSecondary = { fg = c.syntax.keyword },
-    MasonMuted = { fg = c.fg.muted },
-    MasonMutedBlock = { fg = c.fg.primary, bg = c.bg.secondary },
+    MasonMuted = { fg = c.light_grey },
+    MasonMutedBlock = { fg = c.fg.secondary, bg = c.bg0 },
 
     -- ============================================================
     -- Plugin: Copilot
@@ -548,100 +548,100 @@ function M.get_groups(colors, config)
     NotifyERRORBorder = { fg = c.special.error },
     NotifyWARNBorder = { fg = c.special.warning },
     NotifyINFOBorder = { fg = c.special.info },
-    NotifyDEBUGBorder = { fg = c.fg.muted },
+    NotifyDEBUGBorder = { fg = c.light_grey },
     NotifyTRACEBorder = { fg = c.syntax.type },
     NotifyERRORIcon = { fg = c.special.error },
     NotifyWARNIcon = { fg = c.special.warning },
     NotifyINFOIcon = { fg = c.special.info },
-    NotifyDEBUGIcon = { fg = c.fg.muted },
+    NotifyDEBUGIcon = { fg = c.light_grey },
     NotifyTRACEIcon = { fg = c.syntax.type },
     NotifyERRORTitle = { fg = c.special.error },
     NotifyWARNTitle = { fg = c.special.warning },
     NotifyINFOTitle = { fg = c.special.info },
-    NotifyDEBUGTitle = { fg = c.fg.muted },
+    NotifyDEBUGTitle = { fg = c.light_grey },
     NotifyTRACETitle = { fg = c.syntax.type },
-    NotifyERRORBody = { fg = c.fg.primary },
-    NotifyWARNBody = { fg = c.fg.primary },
-    NotifyINFOBody = { fg = c.fg.primary },
-    NotifyDEBUGBody = { fg = c.fg.primary },
-    NotifyTRACEBody = { fg = c.fg.primary },
+    NotifyERRORBody = { fg = c.fg.secondary },
+    NotifyWARNBody = { fg = c.fg.secondary },
+    NotifyINFOBody = { fg = c.fg.secondary },
+    NotifyDEBUGBody = { fg = c.fg.secondary },
+    NotifyTRACEBody = { fg = c.fg.secondary },
 
     -- ============================================================
     -- Plugin: noice.nvim
     -- ============================================================
-    NoiceCmdline = { fg = c.fg.primary },
-    NoiceCmdlineIcon = { fg = c.fg.accent },
+    NoiceCmdline = { fg = c.fg.secondary },
+    NoiceCmdlineIcon = { fg = c.purple },
     NoiceCmdlineIconSearch = { fg = c.special.warning },
-    NoiceCmdlinePopup = { fg = c.fg.primary, bg = c.bg.float },
-    NoiceCmdlinePopupBorder = { fg = c.fg.accent },
+    NoiceCmdlinePopup = { fg = c.fg.secondary, bg = c.bg0 },
+    NoiceCmdlinePopupBorder = { fg = c.purple },
     NoiceCmdlinePopupBorderSearch = { fg = c.special.warning },
-    NoiceConfirm = { fg = c.fg.primary, bg = c.bg.float },
-    NoiceConfirmBorder = { fg = c.fg.accent },
-    NoiceMini = { fg = c.fg.primary, bg = c.bg.secondary },
-    NoicePopup = { fg = c.fg.primary, bg = c.bg.float },
-    NoicePopupBorder = { fg = c.fg.accent },
-    NoiceScrollbar = { bg = c.bg.secondary },
-    NoiceScrollbarThumb = { bg = c.fg.muted },
+    NoiceConfirm = { fg = c.fg.secondary, bg = c.bg0 },
+    NoiceConfirmBorder = { fg = c.purple },
+    NoiceMini = { fg = c.fg.secondary, bg = c.bg0 },
+    NoicePopup = { fg = c.fg.secondary, bg = c.bg0 },
+    NoicePopupBorder = { fg = c.purple },
+    NoiceScrollbar = { bg = c.bg0 },
+    NoiceScrollbarThumb = { bg = c.light_grey },
 
     -- ============================================================
     -- Plugin: bufferline.nvim
     -- ============================================================
-    BufferLineFill = { bg = c.bg.secondary },
-    BufferLineBackground = { fg = c.fg.muted, bg = c.bg.secondary },
-    BufferLineBuffer = { fg = c.fg.muted, bg = c.bg.secondary },
-    BufferLineBufferSelected = { fg = c.fg.primary, bg = c.bg.primary, bold = true },
+    BufferLineFill = { bg = c.bg0 },
+    BufferLineBackground = { fg = c.light_grey, bg = c.bg0 },
+    BufferLineBuffer = { fg = c.light_grey, bg = c.bg0 },
+    BufferLineBufferSelected = { fg = c.fg.secondary, bg = c.black, bold = true },
     BufferLineBufferVisible = { fg = c.fg.secondary, bg = c.bg.tertiary },
-    BufferLineCloseButton = { fg = c.fg.muted, bg = c.bg.secondary },
-    BufferLineCloseButtonSelected = { fg = c.special.error, bg = c.bg.primary },
-    BufferLineCloseButtonVisible = { fg = c.fg.muted, bg = c.bg.tertiary },
-    BufferLineIndicatorSelected = { fg = c.fg.accent, bg = c.bg.primary },
+    BufferLineCloseButton = { fg = c.light_grey, bg = c.bg0 },
+    BufferLineCloseButtonSelected = { fg = c.special.error, bg = c.black },
+    BufferLineCloseButtonVisible = { fg = c.light_grey, bg = c.bg.tertiary },
+    BufferLineIndicatorSelected = { fg = c.purple, bg = c.black },
     BufferLineIndicatorVisible = { fg = c.bg.tertiary, bg = c.bg.tertiary },
-    BufferLineModified = { fg = c.special.warning, bg = c.bg.secondary },
-    BufferLineModifiedSelected = { fg = c.special.warning, bg = c.bg.primary },
+    BufferLineModified = { fg = c.special.warning, bg = c.bg0 },
+    BufferLineModifiedSelected = { fg = c.special.warning, bg = c.black },
     BufferLineModifiedVisible = { fg = c.special.warning, bg = c.bg.tertiary },
-    BufferLineSeparator = { fg = c.bg.secondary, bg = c.bg.secondary },
-    BufferLineSeparatorSelected = { fg = c.bg.secondary, bg = c.bg.primary },
-    BufferLineSeparatorVisible = { fg = c.bg.secondary, bg = c.bg.tertiary },
-    BufferLineTab = { fg = c.fg.muted, bg = c.bg.secondary },
-    BufferLineTabSelected = { fg = c.fg.accent, bg = c.bg.primary, bold = true },
-    BufferLineTabClose = { fg = c.special.error, bg = c.bg.secondary },
+    BufferLineSeparator = { fg = c.bg0, bg = c.bg0 },
+    BufferLineSeparatorSelected = { fg = c.bg0, bg = c.black },
+    BufferLineSeparatorVisible = { fg = c.bg0, bg = c.bg.tertiary },
+    BufferLineTab = { fg = c.light_grey, bg = c.bg0 },
+    BufferLineTabSelected = { fg = c.purple, bg = c.black, bold = true },
+    BufferLineTabClose = { fg = c.special.error, bg = c.bg0 },
 
     -- ============================================================
     -- Plugin: lualine.nvim
     -- ============================================================
-    lualine_a_normal = { fg = c.bg.primary, bg = c.syntax["function"], bold = true },
-    lualine_b_normal = { fg = c.fg.primary, bg = c.bg.tertiary },
-    lualine_c_normal = { fg = c.fg.secondary, bg = c.bg.secondary },
-    lualine_a_insert = { fg = c.bg.primary, bg = c.syntax.keyword, bold = true },
-    lualine_a_visual = { fg = c.bg.primary, bg = c.syntax.type, bold = true },
-    lualine_a_replace = { fg = c.bg.primary, bg = c.special.error, bold = true },
-    lualine_a_command = { fg = c.bg.primary, bg = c.syntax.number, bold = true },
-    lualine_a_inactive = { fg = c.fg.muted, bg = c.bg.secondary },
-    lualine_b_inactive = { fg = c.fg.muted, bg = c.bg.secondary },
-    lualine_c_inactive = { fg = c.fg.muted, bg = c.bg.secondary },
+    lualine_a_normal = { fg = c.black, bg = c.syntax["function"], bold = true },
+    lualine_b_normal = { fg = c.fg.secondary, bg = c.bg.tertiary },
+    lualine_c_normal = { fg = c.fg.secondary, bg = c.bg0 },
+    lualine_a_insert = { fg = c.black, bg = c.syntax.keyword, bold = true },
+    lualine_a_visual = { fg = c.black, bg = c.syntax.type, bold = true },
+    lualine_a_replace = { fg = c.black, bg = c.special.error, bold = true },
+    lualine_a_command = { fg = c.black, bg = c.syntax.number, bold = true },
+    lualine_a_inactive = { fg = c.light_grey, bg = c.bg0 },
+    lualine_b_inactive = { fg = c.light_grey, bg = c.bg0 },
+    lualine_c_inactive = { fg = c.light_grey, bg = c.bg0 },
 
     -- ============================================================
     -- Plugin: dashboard-nvim
     -- ============================================================
     DashboardHeader = { fg = c.syntax.keyword },
-    DashboardCenter = { fg = c.fg.accent },
-    DashboardFooter = { fg = c.fg.muted },
+    DashboardCenter = { fg = c.purple },
+    DashboardFooter = { fg = c.light_grey },
     DashboardShortCut = { fg = c.syntax["function"] },
 
     -- ============================================================
     -- Plugin: alpha-nvim
     -- ============================================================
     AlphaHeader = { fg = c.syntax.keyword },
-    AlphaButtons = { fg = c.fg.accent },
+    AlphaButtons = { fg = c.purple },
     AlphaShortcut = { fg = c.syntax["function"] },
-    AlphaFooter = { fg = c.fg.muted, italic = true },
+    AlphaFooter = { fg = c.light_grey, italic = true },
 
     -- ============================================================
     -- Plugin: trouble.nvim
     -- ============================================================
-    TroubleText = { fg = c.fg.primary },
+    TroubleText = { fg = c.fg.secondary },
     TroubleCount = { fg = c.syntax.keyword, bg = c.bg.tertiary },
-    TroubleNormal = { fg = c.fg.primary, bg = c.bg.float },
+    TroubleNormal = { fg = c.fg.secondary, bg = c.bg0 },
 
     -- ============================================================
     -- Markdown
@@ -651,12 +651,12 @@ function M.get_groups(colors, config)
     markdownH3 = { fg = c.syntax.type, bold = true },
     markdownH4 = { fg = c.syntax.number, bold = true },
     markdownH5 = { fg = c.syntax.property, bold = true },
-    markdownH6 = { fg = c.fg.accent, bold = true },
-    markdownCode = { fg = c.syntax.string, bg = c.bg.secondary },
+    markdownH6 = { fg = c.purple, bold = true },
+    markdownCode = { fg = c.syntax.string, bg = c.bg0 },
     markdownCodeBlock = { fg = c.syntax.string },
     markdownBold = { bold = true },
     markdownItalic = { italic = true },
-    markdownLinkText = { fg = c.fg.accent, underline = true },
+    markdownLinkText = { fg = c.purple, underline = true },
     markdownUrl = { fg = c.syntax["function"], underline = true },
   }
 end
