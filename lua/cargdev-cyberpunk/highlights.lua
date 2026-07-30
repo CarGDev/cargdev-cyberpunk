@@ -43,14 +43,14 @@ function M.get_groups(colors, config)
     Conceal = { fg = c.light_grey },
 
     -- Visual
-    Visual = { fg = c.white, bg = c.dark_purple },
-    VisualNOS = { fg = c.white, bg = c.bg3 },
+    Visual = { fg = c.white, bg = c.magenta },
+    VisualNOS = { fg = c.white, bg = c.magenta },
 
     -- Search
-    Search = { fg = c.black, bg = c.yellow },
-    IncSearch = { fg = c.black, bg = c.syntax.number },
-    CurSearch = { fg = c.black, bg = c.special.warning, bold = true },
-    Substitute = { fg = c.black, bg = c.special.error },
+    Search = { fg = c.bg_blue, bg = c.bg_yellow },
+    IncSearch = { fg = c.black, bg = c.bg_yellow },
+    CurSearch = { fg = c.black, bg = c.bg_yellow, bold = true },
+    Substitute = { fg = c.black, bg = c.bg_yellow, bold = true },
 
     -- Status line
     StatusLine = { fg = c.fg.secondary, bg = c.bg0 },
@@ -95,9 +95,7 @@ function M.get_groups(colors, config)
     Title = { fg = c.syntax.keyword, bold = true },
 
     -- Diff
-    DiffAdd = { fg = c.special.diff_add, bg = "#1a3a1a" },
-    DiffChange = { fg = c.special.diff_change, bg = "#3a3a1a" },
-    DiffDelete = { fg = c.special.diff_delete, bg = "#3a1a1a" },
+    DiffChange = { fg = c.special.diff_change, bg = c.green_bs },
     DiffText = { fg = c.fg.secondary, bg = c.special.diff_change },
 
     -- Spell
@@ -255,9 +253,9 @@ function M.get_groups(colors, config)
     ["@tag.attribute"] = { fg = c.syntax.property },
     ["@tag.delimiter"] = { fg = c.light_grey },
 
-    ["@punctuation"] = { fg = c.fg.secondary.bracket },
-    ["@punctuation.bracket"] = { fg = c.fg.secondary.bracket },
-    ["@punctuation.delimiter"] = { fg = c.fg.secondary.bracket },
+    ["@punctuation"] = { fg = c.fg.primary },
+    ["@punctuation.bracket"] = { fg = c.fg.primary },
+    ["@punctuation.delimiter"] = { fg = c.fg.primary },
     ["@punctuation.special"] = { fg = c.purple },
 
     -- ============================================================
@@ -272,7 +270,6 @@ function M.get_groups(colors, config)
     ["@lsp.type.struct"] = vim.tbl_extend("force", { fg = c.syntax.type }, bold_ty),
     ["@lsp.type.typeParameter"] = vim.tbl_extend("force", { fg = c.syntax.type }, bold_ty),
     ["@lsp.type.parameter"] = { fg = c.syntax.variable },
-    ["@lsp.type.variable"] = { fg = c.syntax.variable },
     ["@lsp.type.property"] = { fg = c.syntax.property, bold = true },
     ["@lsp.type.enumMember"] = { fg = c.syntax.constant, bold = true },
     ["@lsp.type.function"] = vim.tbl_extend("force", { fg = c.syntax["function"] }, bold_fn),
@@ -335,8 +332,9 @@ function M.get_groups(colors, config)
     -- ============================================================
     -- Git (built-in)
     -- ============================================================
-    diffAdded = { fg = c.special.diff_add },
-    diffRemoved = { fg = c.special.diff_delete },
+    DiffAdd = { fg = c.bg.primary, bg = c.syntax.keyword, bold = true },
+    DiffDelete = { bg = c.special.error, bold = true },
+    diffRemoved = { fg = c.dark_red, bold = true },
     diffChanged = { fg = c.special.diff_change },
     diffOldFile = { fg = c.special.diff_delete },
     diffNewFile = { fg = c.special.diff_add },

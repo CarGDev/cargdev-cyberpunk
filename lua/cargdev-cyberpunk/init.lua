@@ -12,24 +12,36 @@ local fn = vim.fn
 
 local M = {}
 
----Load the colorscheme
+function M.setup()
+  local augroup = api.nvim_create_augroup("CargdevCyberpunk", { clear = true })
+  api.nvim_create_autocmd("ColorScheme", {
+    group = augroup,
+    pattern = "*",
+    callback = function()
+      if vim.g.colors_name == "cargdev-cyberpunk" then
+        M.apply_highlights()
+        M.apply_terminal_colors()
+      end
+    end,
+  })
+end
+
 function M.load()
-  if g.colors_name then
+  if vim.g.colors_name then
     cmd("hi clear")
   end
 
-  if fn.exists("syntax_on") then
-    cmd("syntax reset")
-  end
-
-  o.termguicolors = true
-  g.colors_name = "cargdev-cyberpunk"
+  cmd("syntax reset")
+  vim.opt.termguicolors = true
+  vim.g.colors_name = "cargdev-cyberpunk"
 
   M.apply_highlights()
   M.apply_terminal_colors()
-  M.setup_file_explorer_bg()
-end
 
+  if M.setup_file_explorer_bg then
+    M.setup_file_explorer_bg()
+  end
+end
 ---Setup the colorscheme with options
 ---@param opts? CargdevCyberpunkConfig
 function M.setup(opts)

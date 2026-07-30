@@ -1,7 +1,8 @@
 return {
   vibrant = {
+
     -- ============================================================
-    -- Nested semantic groups (used by highlights.lua)
+    -- Nested some semantic groups (used by highlights.lua)
     -- ============================================================
     bg = {
       primary = "#0c0e15",
@@ -20,12 +21,13 @@ return {
       string = "#7ee787", -- more saturated green, reads clearly as "string" vs plain code
       number = "#ffb86c", -- warmer, punchier orange — numbers should pop against text
       constant = "#56d4dd", -- brighter cyan for constants/booleans
-      ["function"] = "#ff31f0", -- vivid sky blue, more vibrant than #41a7fc
-      variable = "#f1f5f9", -- vibrant near-white, per your earlier request
+      ["function"] = "#d600ff", -- vivid sky blue, more vibrant than #41a7fc
+      variable = "#ffffff", -- vibrant near-white, per your earlier request
       operator = "#fefefe", -- lighter purple, distinct from keyword purple
       keyword = "#50fa7b", -- kept — this is your theme's signature purple, already vibrant
-      type = "#ffffff", -- shifted to pink so types are visually distinct from keywords (both were c.purple before — now separated)
+      type = "#fefefe", -- shifted to pink so types are visually distinct from keywords (both were c.purple before — now separated)
       property = "#ff6bc4", -- vivid magenta/pink
+      type_property = "#74569b",
     },
     special = {
       error = "#f65866",
@@ -55,7 +57,7 @@ return {
     -- Base colors
     purple = "#c75ae8",
     magenta = "#e83abf",
-    green = "#8bcd5b",
+    green = "#5fe37a",
     plain_green = "#5fe37a", -- vibrant green for plain code text, same as fg.primary
     orange = "#dd9046",
     blue = "#41a7fc",
@@ -69,7 +71,6 @@ return {
     dark_cyan = "#1b6a73",
     dark_red = "#992525",
     dark_yellow = "#8f610d",
-    dark_purple = "#862aa1",
 
     -- Diff colors
     diff_add = "#27341c",
@@ -92,5 +93,6 @@ return {
     bright_light_grey = "#8fa0c2",
     bright_dark_cyan = "#2a919e",
     bright_dark_red = "#c23636",
+    green_bs = "#3a3a1a",
   },
 }
