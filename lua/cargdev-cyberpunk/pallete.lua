@@ -35,9 +35,9 @@ return {
       info = "#34bfd0",
       hint = "#8bcd5b",
       success = "#8bcd5b",
-      diff_add = "#27341c",
-      diff_delete = "#331c1e",
-      diff_change = "#102b40",
+      diff_add = "#50fa7b",
+      diff_delete = "#f65866",
+      diff_change = "#ffd76e",
     },
 
     -- ============================================================
