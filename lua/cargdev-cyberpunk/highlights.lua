@@ -249,6 +249,16 @@ function M.get_groups(colors, config)
     ["@preproc"] = vim.tbl_extend("force", { fg = c.syntax.keyword }, bold_kw),
     ["@debug"] = { fg = c.syntax.property, bold = true },
 
+    -- Go / Rust / C / C++ / Python (treesitter-only captures; `@keyword.*`
+    -- sub-captures such as @keyword.type/@keyword.modifier already inherit @keyword)
+    ["@attribute"] = { fg = c.syntax.property, bold = true }, -- #[derive(..)], @decorator
+    ["@attribute.builtin"] = { fg = c.syntax.property, bold = true },
+    ["@lifetime"] = { fg = c.syntax.number, italic = true }, -- Rust 'a
+    ["@string.special.path"] = { fg = c.syntax.string, underline = true }, -- #include <x>, imports
+    ["@string.special.symbol"] = { fg = c.syntax.constant },
+    ["@variable.parameter.builtin"] = { fg = c.syntax.constant, bold = true }, -- self / cls
+    ["@module.builtin"] = vim.tbl_extend("force", { fg = c.syntax.type }, bold_ty),
+
     ["@tag"] = { fg = c.syntax.keyword, bold = true },
     ["@tag.attribute"] = { fg = c.syntax.property },
     ["@tag.delimiter"] = { fg = c.light_grey },
